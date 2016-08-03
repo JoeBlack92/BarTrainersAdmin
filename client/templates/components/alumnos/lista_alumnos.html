@@ -1,0 +1,33 @@
+<template name="listaAlumnos">
+
+
+    <div class="container">
+        <div class="row">
+            <h2>Lista Alumnos</h2>
+
+            <ul class="collection">
+                {{#each alumnos}}
+
+                    <li class="collection-item avatar">
+                        <img src="images/yuna.jpg" alt="" class="circle">
+                        <span class="title">{{username}}</span>
+                        <p>
+                            Nombre: {{profile.nombre}}
+                            <br>
+                            Apellido: {{profile.apellido}}
+                            <br>
+                            Email: {{email}}
+                        </p>
+                        <a href="#!" class="secondary-content"><i class="material-icons">send</i></a>
+
+                    </li>
+
+                {{/each}}
+            </ul>
+
+        </div>
+    </div>
+
+
+
+</template>

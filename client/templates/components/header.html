@@ -1,0 +1,29 @@
+<template name="header">
+
+    <header>
+
+        <nav class="top-nav">
+            <div class="container">
+                <div class="nav-wrapper"><a class="page-title">{{title}}</a></div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only">
+                <i class="material-icons">menu</i>
+            </a>
+        </div>
+
+        <ul id="nav-mobile" class="side-nav fixed">
+            <li class="logo">
+                <a id="logo-container" href="http://materializecss.com/" class="brand-logo">
+
+                </a>
+            </li>
+            <li class="bold"><a href="{{pathFor 'inicio'}}" class="waves-effect waves-teal">Inicio</a></li>
+            <li class="bold"><a href="{{pathFor 'listaAlumnos'}}" class="waves-effect waves-teal">Lista Alumnos</a></li>
+        </ul>
+
+    </header>
+
+</template>
