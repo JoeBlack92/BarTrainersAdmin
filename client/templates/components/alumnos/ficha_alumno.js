@@ -22,8 +22,8 @@ Template.fichaAlumno.events({
         
         Meteor.call('editarAlumno', datosAlumno, function (error, result) {
            
-            if(error){
-                console.log(error.reason);
+            if(!error){
+                Router.go('listaAlumnos');
             }
             
         });

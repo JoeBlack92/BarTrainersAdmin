@@ -1,5 +1,9 @@
 /* CSS declarations go here */
 
+a.button-collapse.top-nav {
+    left: 0 !important;
+}
+
 .side-nav {
     position:fixed;
     width:300px;
@@ -243,10 +247,19 @@ nav.top-nav a.page-title {
 
 a.button-collapse.top-nav.full {
     line-height: 95px;
+    position: fixed;
+    z-index: 9999;
 }
+
+main{
+    padding-top: 80px;
+}
+
 nav.top-nav {
+    position: fixed;
     height: 80px;
     box-shadow: none;
+    z-index: 999;
 }
 
 header, main, footer {
@@ -264,7 +277,7 @@ header, main, footer {
         text-align:center
     }
     nav .nav-wrapper a.page-title {
-        font-size:26px
+        font-size:22px
     }
 }
 

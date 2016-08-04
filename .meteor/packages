@@ -21,3 +21,5 @@ iron:router
 materialize:materialize
 accounts-password
 msavin:mongol
+perak:camera
+session

@@ -22,11 +22,12 @@
     <div class="container">
         <div class="row">
             <ul class="collection">
+
                 {{#each alumnos}}
 
                     <li class="collection-item avatar">
-                        <img src="http://placehold.it/60x60" alt="" class="circle">
-                        <span class="title">Nombre de usuario: {{username}}</span>
+                        <img src="{{profile.foto}}" alt="" class="circle">
+                        <span class="title">Usuario: {{username}}</span>
                         <p>
                             Nombre: {{profile.nombre}}
                             <br>
@@ -42,6 +43,7 @@
                     </li>
 
                 {{/each}}
+
             </ul>
 
         </div>

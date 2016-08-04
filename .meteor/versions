@@ -43,6 +43,7 @@ iron:router@1.0.13
 iron:url@1.0.11
 jquery@1.11.9
 launch-screen@1.0.12
+less@2.6.4
 livedata@1.0.18
 localstorage@1.0.11
 logging@1.0.14
@@ -64,6 +65,7 @@ npm-bcrypt@0.8.6_2
 npm-mongo@1.4.45
 observe-sequence@1.0.12
 ordered-dict@1.0.8
+perak:camera@1.0.0
 promise@0.7.3
 random@1.0.10
 rate-limit@1.0.5
