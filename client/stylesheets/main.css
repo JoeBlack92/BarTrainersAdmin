@@ -190,8 +190,8 @@
 }
 /* label underline focus color */
 .input-field input[type=text]:focus {
-    border-bottom: 1px solid #FF5252;
-    box-shadow: 0 1px 0 0 #FF5252;
+    border-bottom: 1px solid #37474f;
+    box-shadow: 0 1px 0 0 #37474f;
 }
 
 /* label focus color */
@@ -200,8 +200,8 @@
 }
 /* label underline focus color */
 .input-field input[type=password]:focus {
-    border-bottom: 1px solid #FF5252;
-    box-shadow: 0 1px 0 0 #FF5252;
+    border-bottom: 1px solid #37474f;
+    box-shadow: 0 1px 0 0 #37474f;
 }
 
 /* label focus color */
@@ -210,8 +210,12 @@
 }
 /* label underline focus color */
 .input-field input[type=email]:focus {
-    border-bottom: 1px solid #FF5252;
-    box-shadow: 0 1px 0 0 #FF5252;
+    border-bottom: 1px solid #37474f;
+    box-shadow: 0 1px 0 0 #37474f;
+}
+.tabs .indicator {
+    height: 4px;
+    background-color: #0f1416 !important;
 }
 
 a.button-collapse.top-nav {
@@ -234,14 +238,14 @@ nav.top-nav a.page-title {
 }
 
 nav.top-nav a.page-title {
-    line-height: 122px;
+    line-height: 87px;
 }
 
 a.button-collapse.top-nav.full {
-    line-height: 122px;
+    line-height: 95px;
 }
 nav.top-nav {
-    height: 122px;
+    height: 80px;
     box-shadow: none;
 }
 
@@ -255,18 +259,12 @@ header, main, footer {
     }
 }
 
-@media only screen and (max-width: 992px){
-    nav .nav-wrapper a.page-title {
-        font-size: 36px;
-    }
-}
-
 @media only screen and (max-width: 992px) {
     nav .nav-wrapper {
         text-align:center
     }
     nav .nav-wrapper a.page-title {
-        font-size:36px
+        font-size:26px
     }
 }
 

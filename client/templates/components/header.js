@@ -9,6 +9,9 @@ Template.header.helpers({
             return 'Nuevo Alumno';
         }else if(Router.current().route.getName() == 'inicio'){
             return 'Inicio';
+        }else if(Router.current().route.getName() == 'listaAlumnos'){
+            return 'Lista Alumnos';
         }
+
     }
 });
