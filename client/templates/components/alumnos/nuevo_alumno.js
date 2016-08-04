@@ -17,8 +17,10 @@ Template.nuevoAlumno.events({
             email: $('#email').val()
         };
 
+        console.log(datosAlumno);
+
         Meteor.call('crearAlumno', datosAlumno, function (error, result) {
-            
+
             if(error){
                 console.log(error.reason);
             }
