@@ -16,12 +16,29 @@
 
         <ul id="nav-mobile" class="side-nav fixed">
             <li class="logo">
-                <a id="logo-container" href="http://materializecss.com/" class="brand-logo">
-
+                <a id="logo-container" href="{{pathFor 'perfil'}}" class="brand-logo">
+                    <div class="row">
+                        <div class="col s3">
+                            <img src="{{currentUser.profile.foto}}" alt="" class="circle responsive-img">
+                        </div>
+                        <div class="col s7">
+                            <span class="bold">{{currentUser.profile.nombre}}</span>
+                        </div>
+                        <div class="col s2">
+                            <span><i style="margin-top: 12px;" class="material-icons">settings</i></span>
+                        </div>
+                    </div>
                 </a>
             </li>
-            <li class="bold"><a href="{{pathFor 'inicio'}}" class="waves-effect waves-teal">Inicio</a></li>
-            <li class="bold"><a href="{{pathFor 'listaAlumnos'}}" class="waves-effect waves-teal">Lista Alumnos</a></li>
+            <li class="bold"><a href="{{pathFor 'dashboard'}}" class="waves-effect waves-teal">Inicio</a></li>
+            {{#if isInRole 'admin' 'profesor'}}
+                <li class="bold"><a href="{{pathFor 'listaAlumnos'}}" class="waves-effect waves-teal">Lista Alumnos</a></li>
+            {{/if}}
+
+            {{#if isInRole 'alumno'}}
+                <li class="bold"><a href="{{pathFor 'nuevaReserva'}}" class="waves-effect waves-teal">Reservar</a></li>
+            {{/if}}
+            <li id="salir" class="bold"><a href="#" class="waves-effect waves-teal">Salir</a></li>
         </ul>
 
     </header>

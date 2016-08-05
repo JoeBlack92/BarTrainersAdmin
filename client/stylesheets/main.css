@@ -149,7 +149,8 @@ a.button-collapse.top-nav {
     left:0;
     -webkit-transform:translateX(0);
     transform:translateX(0);
-    position:fixed
+    position:fixed;
+    z-index: 9999999999;
 }
 .side-nav.fixed.right-aligned {
     right:0;

@@ -40,7 +40,15 @@ Template.nuevoAlumno.events({
             foto: Template.instance().foto.get()
         };
 
-        console.log(datosAlumno);
+        if(!datosAlumno.nombre){
+            return alert('Ingresa un nombre');
+        }else if(!datosAlumno.apellido){
+            return alert('Ingresa un apellido');
+        }else if(!datosAlumno.username){
+            return alert('Ingresa un nombre de usuario');
+        }else if(!datosAlumno.email){
+            return alert('Ingresa un email');
+        }
 
         Meteor.call('crearAlumno', datosAlumno, function (error, result) {
 
@@ -48,6 +56,11 @@ Template.nuevoAlumno.events({
                 Router.go('listaAlumnos');
             }else{
                 console.log(error.reason);
+                if(error.reason == "Username already exists."){
+                    alert('El nombre de usuario ya esta registrado');
+                }else if(error.reason == "Email already exists."){
+                    alert('Este email ya esta registrado');
+                }
             }
             
         });

@@ -3,8 +3,19 @@
  */
 
 
+Template.fichaAlumno.onCreated(function () {
+
+    var instance = this;
+    instance.foto = new ReactiveVar(instance.data.profile.foto);
+
+});
+
 Template.fichaAlumno.helpers({
-    
+
+    foto: function () {
+        return Template.instance().foto.get();
+    }
+
 });
 
 
@@ -17,8 +28,19 @@ Template.fichaAlumno.events({
             nombre: $('#nombre').val(),
             apellido: $('#apellido').val(),
             username: $('#username').val(),
-            email: $('#email').val()
+            email: $('#email').val(),
+            foto: Template.instance().foto.get()
         };
+
+        if(!datosAlumno.nombre){
+            return alert('Ingresa un nombre');
+        }else if(!datosAlumno.apellido){
+            return alert('Ingresa un apellido');
+        }else if(!datosAlumno.username){
+            return alert('Ingresa un nombre de usuario');
+        }else if(!datosAlumno.email){
+            return alert('Ingresa un email');
+        }
         
         Meteor.call('editarAlumno', datosAlumno, function (error, result) {
            
@@ -27,6 +49,13 @@ Template.fichaAlumno.events({
             }
             
         });
-
+    },
+    
+    'click #tomar-foto': function (e,t) {
+        MeteorCamera.getPicture({width: 200, height:250, quality:80}, function (error, data) {
+            if(!error){
+                t.foto.set(data);
+            }
+        });
     }
 });

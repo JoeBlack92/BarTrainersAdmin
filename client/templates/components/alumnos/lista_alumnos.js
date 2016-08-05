@@ -9,7 +9,7 @@ Template.listaAlumnos.onRendered(function () {
 Template.listaAlumnos.helpers({
 
     alumnos: function () {
-        return Meteor.users.find();
+        return Meteor.users.find({'roles.0': 'alumno'});
     }
 
 });

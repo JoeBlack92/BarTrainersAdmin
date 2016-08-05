@@ -20,3 +20,13 @@ Template.header.helpers({
 
     }
 });
+
+Template.header.events({
+
+    'click #salir': function () {
+        Meteor.logout(function () {
+            Router.go('login');
+        });
+    }
+
+});

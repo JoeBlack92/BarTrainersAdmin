@@ -3,13 +3,20 @@
  */
 
 Meteor.publish('alumno', function (alumnoId) {
+    
+    if(Roles.userIsInRole(this.userId,['admin', 'profesor'])){
+        return Meteor.users.find({_id: alumnoId});
+    }
 
-    return Meteor.users.find({_id: alumnoId});
+    
 
 });
 
 Meteor.publish('listaAlumnos', function () {
 
-    return Meteor.users.find({});
+
+    if(Roles.userIsInRole(this.userId ,['admin', 'profesor'])){
+        return Meteor.users.find({'roles.0' : 'alumno'});
+    }
     
 });

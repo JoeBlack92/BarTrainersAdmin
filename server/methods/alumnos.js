@@ -7,7 +7,7 @@ Meteor.methods({
 
     crearAlumno: function (datosAlumno) {
 
-        Accounts.createUser({
+        var id = Accounts.createUser({
             username: datosAlumno.username,
             email: datosAlumno.email,
             password: datosAlumno.password,
@@ -19,6 +19,8 @@ Meteor.methods({
             }
         });
 
+        Roles.addUsersToRoles(id, 'alumno');
+
     },
 
     editarAlumno: function (datosAlumno) {
@@ -26,41 +28,11 @@ Meteor.methods({
         Meteor.users.update({username: datosAlumno.username},{$set: {
             
             username: datosAlumno.username,
-            profile:{
-                nombre: datosAlumno.nombre,
-                apellido: datosAlumno.apellido
-            },
+            'profile.foto': datosAlumno.foto,
+            'profile.nombre': datosAlumno.nombre,
+            'profile.apellido': datosAlumno.apellido,
             'emails.0.address': datosAlumno.email
         }});
-
-    },
-
-    crearProfesor: function (datosProfesor) {
-
-        Accounts.createUser({
-            username: datosProfesor.username,
-            email: datosProfesor.email,
-            password: datosProfesor.password,
-            profile: {
-                nombre: datosProfesor.nombre,
-                apellido: datosProfesor.apellido,
-                role: 'profesor'
-            }
-        });
-
-    },
-    crearEmpresa: function (datosEmpresa) {
-
-        Accounts.createUser({
-            username: datosEmpresa.username,
-            email: datosProfesor.email,
-            password: datosEmpresa.password,
-            profile: {
-                nombre: datosEmpresa.nombre,
-                apellido: datosEmpresa.apellido,
-                role: 'empresa'
-            }
-        });
 
     }
 

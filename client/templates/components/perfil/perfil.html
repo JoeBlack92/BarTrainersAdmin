@@ -1,5 +1,4 @@
-<template name="fichaAlumno">
-
+<template name="perfil">
 
     <div class="row">
 
@@ -7,37 +6,28 @@
 
             <br>
 
-            <div class="row">
-                <div class="col s6">
-                    <img class="responsive-img" src="{{foto}}">
-                </div>
-                <div class="col s6">
-                    <button id="tomar-foto" class="btn waves-effect waves-light blue-grey darken-3">Editar Foto</button>
-                </div>
-            </div>
-
-            <form id="ficha" class="col s12">
+            <form id="guardar-perfil" class="col s12">
 
                 <div class="row">
                     <div class="input-field col s6">
-                        <input id="nombre" type="text" value="{{profile.nombre}}" class="validate">
+                        <input id="nombre" type="text" value="{{currentUser.profile.nombre}}" class="validate">
                         <label class="active" for="nombre">Nombre</label>
                     </div>
                     <div class="input-field col s6">
-                        <input id="apellido" type="text" value="{{profile.apellido}}" class="validate">
+                        <input id="apellido" type="text" value="{{currentUser.profile.apellido}}" class="validate">
                         <label class="active" for="apellido">Apellido</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="username" type="text" value="{{username}}" class="validate">
+                        <input id="username" type="text" value="{{currentUser.username}}" class="validate">
                         <label class="active" for="username">Usuario</label>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="email" value="{{emails.[0].address}}" type="email" class="validate">
+                        <input id="email" value="{{currentUser.emails.[0].address}}" type="email" class="validate">
                         <label class="active" for="email">Email</label>
                     </div>
                 </div>
