@@ -4,6 +4,15 @@ a.button-collapse.top-nav {
     left: 0 !important;
 }
 
+ul.side-nav.fixed li.logo {
+    text-align: center;
+    margin-top: 32px;
+}
+
+#logo-container {
+    height: auto;
+}
+
 .side-nav {
     position:fixed;
     width:300px;
@@ -151,6 +160,7 @@ a.button-collapse.top-nav {
     transform:translateX(0);
     position:fixed;
     z-index: 9999999999;
+    width: 250px;
 }
 .side-nav.fixed.right-aligned {
     right:0;
@@ -220,7 +230,7 @@ a.button-collapse.top-nav {
 }
 .tabs .indicator {
     height: 4px;
-    background-color: #0f1416 !important;
+    background-color: #9db0c9 !important;
 }
 
 a.button-collapse.top-nav {
@@ -264,7 +274,7 @@ nav.top-nav {
 }
 
 header, main, footer {
-    padding-left: 300px;
+    padding-left: 250px;
 }
 
 @media only screen and (max-width: 992px) {

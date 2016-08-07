@@ -1,5 +1,17 @@
-Template.perfil.helpers({
- //add you helpers here
+Template.perfil.onCreated(function() {
+
+    var instance = this;
+    var user = Meteor.user();
+    if(user && user.profile.foto){
+        instance.foto = new ReactiveVar(user.profile.foto);
+    }else{
+        instance.foto = new ReactiveVar('/img/avatar.png');
+    }
+
+});
+
+Template.perfil.onRendered(function() {
+
 });
 
 Template.perfil.events({
@@ -8,24 +20,25 @@ Template.perfil.events({
 
         e.preventDefault();
 
-        var datosAlumno = {
+        var datos = {
             nombre: $('#nombre').val(),
             apellido: $('#apellido').val(),
             username: $('#username').val(),
-            email: $('#email').val()
+            email: $('#email').val(),
+            foto: t.foto.get()
         };
 
-        if(!datosAlumno.nombre){
+        if(!datos.nombre){
             return alert('Ingresa un nombre');
-        }else if(!datosAlumno.apellido){
+        }else if(!datos.apellido){
             return alert('Ingresa un apellido');
-        }else if(!datosAlumno.username){
+        }else if(!datos.username){
             return alert('Ingresa un nombre de usuario');
-        }else if(!datosAlumno.email){
+        }else if(!datos.email){
             return alert('Ingresa un email');
         }
 
-        Meteor.call('guardarPerfil', datosAlumno, function (error, result) {
+        Meteor.call('guardarPerfil', datos, function (error, result) {
 
             if(!error){
                 Router.go('dashboard');
@@ -35,16 +48,27 @@ Template.perfil.events({
 
         });
 
+    },
+    
+    'click #tomar-foto': function (e,t) {
+        MeteorCamera.getPicture({width: 200, height:250, quality:80}, function (error, data) {
+            if(!error){
+                t.foto.set(data);
+            }
+        });
     }
     
 });
 
-Template.perfil.onCreated(function() {
-    //add your statement here
-});
-
-Template.perfil.onRendered(function() {
-    //add your statement here
+Template.perfil.helpers({
+    foto: function () {
+        return Template.instance().foto.get();
+    },
+    isAdmin: function () {
+        if (Roles.userIsInRole(Meteor.userId(), ['admin'])) {
+            return true;
+        }
+    }
 });
 
 Template.perfil.onDestroyed(function() {

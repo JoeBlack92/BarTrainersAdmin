@@ -34,6 +34,20 @@ Meteor.methods({
             'emails.0.address': datosAlumno.email
         }});
 
+    },
+
+    eliminarAlumno: function (idAlumno) {
+
+        if (Roles.userIsInRole(Meteor.userId(), ['admin'])) {
+            
+            Meteor.users.remove({_id: idAlumno});
+
+        }else{
+            
+            throw new Meteor.Error('no-admin', 'No eres administrador');
+            
+        }
+
     }
 
 });

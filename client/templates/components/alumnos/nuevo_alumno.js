@@ -5,7 +5,7 @@
 Template.nuevoAlumno.onCreated(function () {
 
     var instance = this;
-    instance.foto = new ReactiveVar('img/avatar.png');
+    instance.foto = new ReactiveVar('/img/avatar.png');
 
 });
 

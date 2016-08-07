@@ -6,6 +6,20 @@
 
             <br>
 
+            {{#if isAdmin}}
+
+                <div class="row">
+                    <div class="col s6">
+                        <img class="responsive-img" src="{{foto}}">
+                    </div>
+                    <div class="col s6">
+                        <button id="tomar-foto" class="btn waves-effect waves-light blue-grey darken-3">Editar Foto</button>
+                    </div>
+                </div>
+
+            {{/if}}
+
+
             <form id="guardar-perfil" class="col s12">
 
                 <div class="row">

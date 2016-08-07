@@ -18,14 +18,9 @@
             <li class="logo">
                 <a id="logo-container" href="{{pathFor 'perfil'}}" class="brand-logo">
                     <div class="row">
-                        <div class="col s3">
-                            <img src="{{currentUser.profile.foto}}" alt="" class="circle responsive-img">
-                        </div>
-                        <div class="col s7">
-                            <span class="bold">{{currentUser.profile.nombre}}</span>
-                        </div>
-                        <div class="col s2">
-                            <span><i style="margin-top: 12px;" class="material-icons">settings</i></span>
+                        <div class="col s12">
+                            <img style="height: 150px !important; width: 150px;" src="{{currentUser.profile.foto}}" alt="" class="circle responsive-img">
+                            <p>{{currentUser.profile.nombre}} {{currentUser.profile.apellido}}</p>
                         </div>
                     </div>
                 </a>
@@ -36,8 +31,11 @@
             {{/if}}
 
             {{#if isInRole 'alumno'}}
-                <li class="bold"><a href="{{pathFor 'nuevaReserva'}}" class="waves-effect waves-teal">Reservar</a></li>
+                <li class="bold"><a href="{{pathFor 'listaReservas'}}" class="waves-effect waves-teal">Reservar</a></li>
             {{/if}}
+
+            <li class="bold"><a href="{{pathFor 'perfil'}}" class="waves-effect waves-teal">Configuración</a></li>
+
             <li id="salir" class="bold"><a href="#" class="waves-effect waves-teal">Salir</a></li>
         </ul>
 

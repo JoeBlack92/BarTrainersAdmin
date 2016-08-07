@@ -19,14 +19,28 @@ Meteor.methods({
             throw new Meteor.Error('emailExist', 'El email ya esta registrado');
         }
 
-        Meteor.users.update({_id: Meteor.userId()},{$set: {
+        if(Roles.userIsInRole(Meteor.userId(),['admin'])){
+            Meteor.users.update({_id: Meteor.userId()},{$set: {
 
-            username: datos.username,
-            'profile.nombre': datos.nombre,
-            'profile.apellido': datos.apellido,
-            'emails.0.address': datos.email
+                username: datos.username,
+                'profile.nombre': datos.nombre,
+                'profile.apellido': datos.apellido,
+                'emails.0.address': datos.email,
+                'profile.foto': datos.foto
 
-        }});
+            }});
+        }else{
+            Meteor.users.update({_id: Meteor.userId()},{$set: {
+
+                username: datos.username,
+                'profile.nombre': datos.nombre,
+                'profile.apellido': datos.apellido,
+                'emails.0.address': datos.email
+
+            }});
+        }
+
+
 
     }
 

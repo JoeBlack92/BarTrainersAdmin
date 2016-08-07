@@ -7,6 +7,11 @@ Template.fichaAlumno.onCreated(function () {
 
     var instance = this;
     instance.foto = new ReactiveVar(instance.data.profile.foto);
+});
+
+Template.fichaAlumno.onRendered(function () {
+
+    $('.modal-trigger').leanModal();
 
 });
 
@@ -57,5 +62,19 @@ Template.fichaAlumno.events({
                 t.foto.set(data);
             }
         });
+    },
+
+    'click #eliminar-alumno': function () {
+
+        Meteor.call('eliminarAlumno', this._id, function (error, result) {
+
+            if(error){
+                return alert(error.reason);
+            }
+
+            Router.go('listaAlumnos');
+
+        })
+
     }
 });

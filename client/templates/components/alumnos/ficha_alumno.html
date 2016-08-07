@@ -48,7 +48,28 @@
                     <i class="material-icons right">send</i>
                 </button>
             </form>
+
+            <div class="col s12">
+                <br>
+                <!-- Modal Trigger -->
+                <a class="red accent-2 waves-effect waves-light btn modal-trigger" href="#modal1">Elminar</a>
+            </div>
+
         </div>
+
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <h4>Eliminar</h4>
+                <p>Seguro que desea eliminar al alumno  {{profile.nombre}} {{profile.apellido}}</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat ">Cancelar</a>
+                <a id="eliminar-alumno" href="#" class="modal-action modal-close waves-effect waves-red btn-flat ">Eliminar</a>
+            </div>
+        </div>
+
+
     </div>
 
 </template>
