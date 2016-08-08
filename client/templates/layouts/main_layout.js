@@ -17,16 +17,19 @@ Template.mainLayout.onRendered(function () {
 
     instance.autorun(function () {
 
-        if(instance.ancho.get() > 992){
-            $('.button-collapse').sideNav({
-                'edge': 'left'
-            });
-        }else if(instance.ancho.get() < 992){
+
+        if(Meteor.Device.isPhone() || Meteor.Device.isTablet()){
             $('.button-collapse').sideNav({
                 closeOnClick: true,
                 'edge': 'left'
             });
+        }else{
+            $('.button-collapse').sideNav({
+                'edge': 'left'
+            });
         }
+
+
 
     });
     

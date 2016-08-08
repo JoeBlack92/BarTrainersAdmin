@@ -63,6 +63,7 @@ momentjs:moment@2.14.4
 mongo@1.1.9_1
 mongo-id@1.0.5
 msavin:mongol@2.0.1
+mystor:device-detection@0.2.0
 npm-bcrypt@0.8.6_2
 npm-mongo@1.4.45
 observe-sequence@1.0.12
@@ -75,6 +76,7 @@ reactive-dict@1.1.8
 reactive-var@1.0.10
 reload@1.1.10
 retry@1.0.8
+reywood:publish-composite@1.4.2
 routepolicy@1.0.11
 service-configuration@1.0.10
 session@1.1.6

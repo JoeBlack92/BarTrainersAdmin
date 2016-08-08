@@ -159,7 +159,7 @@ ul.side-nav.fixed li.logo {
     -webkit-transform:translateX(0);
     transform:translateX(0);
     position:fixed;
-    z-index: 9999999999;
+    z-index: 9999999;
     width: 250px;
 }
 .side-nav.fixed.right-aligned {
@@ -304,4 +304,13 @@ a.button-collapse.top-nav i {
     .navbar-fixed {
         height:64px
     }
+}
+
+.card {
+     margin: 0;
+     border-radius: 0;
+}
+
+.no-padding{
+    padding: 0 !important;
 }

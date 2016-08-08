@@ -8,8 +8,6 @@ Meteor.publish('alumno', function (alumnoId) {
         return Meteor.users.find({_id: alumnoId});
     }
 
-    
-
 });
 
 Meteor.publish('listaAlumnos', function () {
@@ -19,4 +17,11 @@ Meteor.publish('listaAlumnos', function () {
         return Meteor.users.find({'roles.0' : 'alumno'});
     }
     
+});
+
+
+Meteor.publish('progresoAlumno', function (alumnoId) {
+
+    return Progresos.find({_id: alumnoId});
+
 });

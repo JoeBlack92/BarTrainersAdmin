@@ -1,0 +1,39 @@
+<template name="listaProfesores">
+
+    <div class="container">
+        <div class="row">
+            <ul class="collection">
+
+                {{#each profesores}}
+
+                    <li class="collection-item avatar">
+                        <img src="{{profile.foto}}" alt="" class="circle">
+                        <span class="title">Usuario: {{username}}</span>
+                        <p>
+                            Nombre: {{profile.nombre}}
+                            <br>
+                            Apellido: {{profile.apellido}}
+                            <br>
+                            Email: {{emails.[0].address}}
+                        </p>
+                        <a href="{{pathFor 'fichaProfesor'}}" class="secondary-content">
+                            <i class="material-icons blue-grey-text text-darken-3">
+                                mode_edit
+                            </i>
+                        </a>
+                    </li>
+
+                {{/each}}
+
+            </ul>
+
+        </div>
+    </div>
+
+    <div class="fixed-action-btn ">
+        <a href="{{pathFor 'nuevoProfesor'}}" class="btn-floating btn-large blue-grey darken-3">
+            <i class="material-icons">add</i>
+        </a>
+    </div>
+
+</template>

@@ -3,19 +3,19 @@
  */
 
 
-Template.fichaAlumno.onCreated(function () {
+Template.fichaProfesor.onCreated(function () {
 
     var instance = this;
     instance.foto = new ReactiveVar(instance.data.profile.foto);
 });
 
-Template.fichaAlumno.onRendered(function () {
+Template.fichaProfesor.onRendered(function () {
 
     $('.modal-trigger').leanModal();
 
 });
 
-Template.fichaAlumno.helpers({
+Template.fichaProfesor.helpers({
 
     foto: function () {
         return Template.instance().foto.get();
@@ -24,12 +24,12 @@ Template.fichaAlumno.helpers({
 });
 
 
-Template.fichaAlumno.events({
+Template.fichaProfesor.events({
     'submit #ficha': function (e,t) {
 
         e.preventDefault();
 
-        var datosAlumno = {
+        var datosProfesor = {
             _id: Router.current().params._id,
             nombre: $('#nombre').val(),
             apellido: $('#apellido').val(),
@@ -38,20 +38,20 @@ Template.fichaAlumno.events({
             foto: Template.instance().foto.get()
         };
 
-        if(!datosAlumno.nombre){
+        if(!datosProfesor.nombre){
             return alert('Ingresa un nombre');
-        }else if(!datosAlumno.apellido){
+        }else if(!datosProfesor.apellido){
             return alert('Ingresa un apellido');
-        }else if(!datosAlumno.username){
+        }else if(!datosProfesor.username){
             return alert('Ingresa un nombre de usuario');
-        }else if(!datosAlumno.email){
+        }else if(!datosProfesor.email){
             return alert('Ingresa un email');
         }
         
-        Meteor.call('editarAlumno', datosAlumno, function (error, result) {
+        Meteor.call('editarProfesor', datosProfesor, function (error, result) {
            
             if(!error){
-                Router.go('listaAlumnos');
+                Router.go('listaProfesores');
             }
             
         });
@@ -65,15 +65,15 @@ Template.fichaAlumno.events({
         });
     },
 
-    'click #eliminar-alumno': function () {
+    'click #eliminar-profesor': function () {
 
-        Meteor.call('eliminarAlumno', this._id, function (error, result) {
+        Meteor.call('eliminarProfesor', this._id, function (error, result) {
 
             if(error){
                 return alert(error.reason);
             }
 
-            Router.go('listaAlumnos');
+            Router.go('listaProfesores');
 
         })
 

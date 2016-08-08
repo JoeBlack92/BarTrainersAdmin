@@ -2,14 +2,14 @@
  * Created by puesto1 on 3/8/16.
  */
 
-Template.nuevoAlumno.onCreated(function () {
+Template.nuevoProfesor.onCreated(function () {
 
     var instance = this;
     instance.foto = new ReactiveVar('/img/avatar.png');
 
 });
 
-Template.nuevoAlumno.helpers({
+Template.nuevoProfesor.helpers({
 
     foto: function () {
         return Template.instance().foto.get();
@@ -17,7 +17,7 @@ Template.nuevoAlumno.helpers({
     
 });
 
-Template.nuevoAlumno.events({
+Template.nuevoProfesor.events({
 
     'click #tomar-foto': function (event,template) { //event, template
         MeteorCamera.getPicture({width: 200, height:250, quality:80}, function (error, data) {
@@ -42,10 +42,10 @@ Template.nuevoAlumno.events({
 
         
 
-        Meteor.call('crearAlumno', datosAlumno, function (error, result) {
+        Meteor.call('crearProfesor', datosAlumno, function (error, result) {
 
             if(!error){
-                Router.go('listaAlumnos');
+                Router.go('listaProfesores');
             }else{
                 console.log(error.reason);
                 if(error.reason == "Username already exists."){

@@ -25,7 +25,7 @@ Meteor.methods({
 
     editarAlumno: function (datosAlumno) {
 
-        Meteor.users.update({username: datosAlumno.username},{$set: {
+        Meteor.users.update({_id: datosAlumno._id},{$set: {
             
             username: datosAlumno.username,
             'profile.foto': datosAlumno.foto,
@@ -49,5 +49,6 @@ Meteor.methods({
         }
 
     }
+    
 
 });

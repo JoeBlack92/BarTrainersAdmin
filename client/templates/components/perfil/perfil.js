@@ -11,7 +11,7 @@ Template.perfil.onCreated(function() {
 });
 
 Template.perfil.onRendered(function() {
-
+    
 });
 
 Template.perfil.events({
@@ -50,10 +50,10 @@ Template.perfil.events({
 
     },
     
-    'click #tomar-foto': function (e,t) {
+    'click #tomar-foto': function (e,template) {
         MeteorCamera.getPicture({width: 200, height:250, quality:80}, function (error, data) {
             if(!error){
-                t.foto.set(data);
+                template.foto.set(data);
             }
         });
     }
