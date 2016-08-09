@@ -20,7 +20,7 @@ Template.nuevoAlumno.helpers({
 Template.nuevoAlumno.events({
 
     'click #tomar-foto': function (event,template) { //event, template
-        MeteorCamera.getPicture({width: 200, height:250, quality:80}, function (error, data) {
+        MeteorCamera.getPicture({width: 300, height:300, quality:80}, function (error, data) {
             if(!error){
                 template.foto.set(data); //imagen base64
             }
