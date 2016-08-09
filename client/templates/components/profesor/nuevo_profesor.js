@@ -31,7 +31,7 @@ Template.nuevoProfesor.events({
 
         e.preventDefault();
 
-        var datosAlumno = {
+        var datosProfesor = {
             nombre: $('#nombre').val(),
             apellido: $('#apellido').val(),
             username: $('#username').val(),
@@ -40,9 +40,19 @@ Template.nuevoProfesor.events({
             foto: Template.instance().foto.get()
         };
 
+        if(!datosProfesor.nombre){
+            return alert('Ingresa un nombre');
+        }else if(!datosProfesor.apellido){
+            return alert('Ingresa un apellido');
+        }else if(!datosProfesor.username){
+            return alert('Ingresa un nombre de usuario');
+        }else if(!datosProfesor.email){
+            return alert('Ingresa un email');
+        }
+
         
 
-        Meteor.call('crearProfesor', datosAlumno, function (error, result) {
+        Meteor.call('crearProfesor', datosProfesor, function (error, result) {
 
             if(!error){
                 Router.go('listaProfesores');

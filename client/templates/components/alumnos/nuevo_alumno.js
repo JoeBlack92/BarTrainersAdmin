@@ -20,7 +20,7 @@ Template.nuevoAlumno.helpers({
 Template.nuevoAlumno.events({
 
     'click #tomar-foto': function (event,template) { //event, template
-        MeteorCamera.getPicture({width: 300, height:300, quality:80}, function (error, data) {
+        MeteorCamera.getPicture({width: 300, height:300, quality:100}, function (error, data) {
             if(!error){
                 template.foto.set(data); //imagen base64
             }
@@ -40,7 +40,15 @@ Template.nuevoAlumno.events({
             foto: Template.instance().foto.get()
         };
 
-        
+        if(!datosAlumno.nombre){
+            return alert('Ingresa un nombre');
+        }else if(!datosAlumno.apellido){
+            return alert('Ingresa un apellido');
+        }else if(!datosAlumno.username){
+            return alert('Ingresa un nombre de usuario');
+        }else if(!datosAlumno.email){
+            return alert('Ingresa un email');
+        }
 
         Meteor.call('crearAlumno', datosAlumno, function (error, result) {
 
