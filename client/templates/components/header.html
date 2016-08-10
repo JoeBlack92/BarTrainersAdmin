@@ -26,16 +26,23 @@
                 </div>
             </li>
             <li class="bold"><a href="{{pathFor 'dashboard'}}" class="waves-effect waves-teal">Inicio</a></li>
-            {{#if isInRole 'admin' 'profesor'}}
+            {{#if isInRole 'admin' }}
+                <li class="bold"><a href="{{pathFor 'listaAlumnos'}}" class="waves-effect waves-teal">Alumnos</a></li>
+            {{/if}}
+            {{#if isInRole 'profesor' }}
                 <li class="bold"><a href="{{pathFor 'listaAlumnos'}}" class="waves-effect waves-teal">Alumnos</a></li>
             {{/if}}
             {{#if isInRole 'admin'}}
                 <li class="bold"><a href="{{pathFor 'listaProfesores'}}" class="waves-effect waves-teal">Profesores</a></li>
             {{/if}}
 
-            {{#if isInRole 'admin' 'alumno'}}
+            {{#if isInRole 'alumno'}}
                 <li class="bold"><a href="{{pathFor 'listaReservas'}}" class="waves-effect waves-teal">Reservas</a></li>
             {{/if}}
+            {{#if isInRole 'admin'}}
+                <li class="bold"><a href="{{pathFor 'listaReservas'}}" class="waves-effect waves-teal">Reservas</a></li>
+            {{/if}}
+
 
             <li class="bold"><a href="{{pathFor 'perfil'}}" class="waves-effect waves-teal">Configuración</a></li>
 
