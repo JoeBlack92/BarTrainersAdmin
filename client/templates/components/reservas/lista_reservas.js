@@ -23,6 +23,10 @@ Template.listaReservas.helpers({
 
     reservas: function () {
         return Reservas.find();
+    },
+    
+    misResevas: function () {
+        return Reservas.find({id_user: Meteor.userId()});
     }
 
 });

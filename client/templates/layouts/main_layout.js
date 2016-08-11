@@ -18,12 +18,12 @@ Template.mainLayout.onRendered(function () {
     instance.autorun(function () {
 
 
-        if(Meteor.Device.isPhone() || Meteor.Device.isTablet()){
+        if(Meteor.Device.isPhone()){
             $('.button-collapse').sideNav({
                 closeOnClick: true,
                 'edge': 'left'
             });
-        }else{
+        }else {
             $('.button-collapse').sideNav({
                 'edge': 'left'
             });

@@ -14,7 +14,20 @@ Template.reserva.helpers({
 });
 
 Template.reserva.events({
- //add your events here
+    'click #removeReserva' : function (e,t) {
+
+        var retVal = confirm("Esta seguro de eliminar la reserva?");
+        if( retVal == true ){
+
+            Meteor.call('eliminarReserva', this._id , function (error, result) {
+                if(error){
+                    return alert('No se ha podido eliminar la reserva');
+                }
+            });
+
+        }
+
+    }
 });
 
 Template.reserva.onCreated(function() {
