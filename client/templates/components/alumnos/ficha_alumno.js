@@ -19,8 +19,8 @@ Template.fichaAlumno.helpers({
 
     foto: function () {
         return Template.instance().foto.get();
-    }
-
+    },
+   
 });
 
 
@@ -65,17 +65,22 @@ Template.fichaAlumno.events({
         });
     },
 
-    'click #eliminar-alumno': function () {
+    'click #eliminar-alumno': function (e,t) {
 
-        Meteor.call('eliminarAlumno', this._id, function (error, result) {
+        
+            var retVal = confirm("Esta seguro de eliminar la reserva?");
+            if( retVal == true ){
+                
+                Meteor.call('eliminarAlumno', this._id, function (error, result) {
 
-            if(error){
-                return alert(error.reason);
-            }
+                    if(error){
+                        return alert(error.reason);
+                    }
 
-            Router.go('listaAlumnos');
+                    Router.go('listaAlumnos');
 
-        })
 
+                });
+            }  
     }
 });

@@ -11,14 +11,20 @@
                 </li>
             </ul>
         </div>
-        <div id="test1" class="col s12">
+        <div id="test1" class="col s12 no-padding">
+            {{#each reservas}}
 
-            Lista
+                {{>reserva}}
 
+            {{/each}}
         </div>
-        <div id="test2" class="col s12">
+        <div id="test2" class="col s12 no-padding">
 
-            Mis reservas
+            {{#each misResevas}}
+
+                {{>reserva}}
+
+            {{/each}}
 
         </div>
     </div>

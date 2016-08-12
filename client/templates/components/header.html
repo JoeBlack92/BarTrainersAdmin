@@ -4,7 +4,9 @@
 
         <nav class="top-nav blue-grey darken-3">
             <div class="container">
-                <div class="nav-wrapper"><a class="page-title">{{title}}</a></div>
+                <div class="nav-wrapper"><a class="page-title">
+                    <img src="/img/logo.png" width="150px" style="margin-top: 10px;" >
+                </a></div>
             </div>
         </nav>
 
@@ -12,30 +14,41 @@
             <a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only">
                 <i class="material-icons">menu</i>
             </a>
+
         </div>
 
-        <ul id="nav-mobile" class="side-nav fixed">
+        <ul id="nav-mobile"  class="side-nav fixed blue-grey darken-3">
             <li class="logo">
                 <div id="logo-container" class="brand-logo">
                     <div class="row">
-                        <div class="col s12">
-                            <img style="height: 150px !important; width: 150px;" src="{{currentUser.profile.foto}}" alt="" class="circle responsive-img">
-                            <p>{{currentUser.profile.nombre}} {{currentUser.profile.apellido}}</p>
+                        <div class="col s12 profile-content">
+                            <img style="background-image: url('{{currentUser.profile.foto}}');" class=" avatar responsive-img">
+                            <h1>{{currentUser.profile.nombre}} {{currentUser.profile.apellido}}</h1>
                         </div>
                     </div>
                 </div>
             </li>
             <li class="bold"><a href="{{pathFor 'dashboard'}}" class="waves-effect waves-teal">Inicio</a></li>
-            {{#if isInRole 'admin' 'profesor'}}
+            {{#if isInRole 'admin' }}
+                <li class="bold"><a href="{{pathFor 'listaAlumnos'}}" class="waves-effect waves-teal">Alumnos</a></li>
+            {{/if}}
+            {{#if isInRole 'profesor' }}
                 <li class="bold"><a href="{{pathFor 'listaAlumnos'}}" class="waves-effect waves-teal">Alumnos</a></li>
             {{/if}}
             {{#if isInRole 'admin'}}
                 <li class="bold"><a href="{{pathFor 'listaProfesores'}}" class="waves-effect waves-teal">Profesores</a></li>
             {{/if}}
 
-            {{#if isInRole 'admin' 'alumno'}}
+            {{#if isInRole 'alumno'}}
                 <li class="bold"><a href="{{pathFor 'listaReservas'}}" class="waves-effect waves-teal">Reservas</a></li>
             {{/if}}
+            {{#if isInRole 'profesor'}}
+                <li class="bold"><a href="{{pathFor 'listaReservas'}}" class="waves-effect waves-teal">Reservas</a></li>
+            {{/if}}
+            {{#if isInRole 'admin'}}
+                <li class="bold"><a href="{{pathFor 'listaReservas'}}" class="waves-effect waves-teal">Reservas</a></li>
+            {{/if}}
+
 
             <li class="bold"><a href="{{pathFor 'perfil'}}" class="waves-effect waves-teal">Configuración</a></li>
 

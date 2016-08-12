@@ -17,12 +17,12 @@ Template.dashboard.events({
     },
     'click #profesores': function () {
 
-        Router.go('listaAlumnos');
+        Router.go('listaProfesores');
 
     },
     'click #reservas': function () {
 
-        Router.go('listaAlumnos');
+        Router.go('listaReservas');
 
     }
 

@@ -7,21 +7,25 @@
             <br>
 
             {{#if isAdmin}}
+                    <div class="col s12">
+                        <section class="profile">
+                            <div class="profile-content">
+                                <center><img src="{{foto}}" alt="" class="avatar responsive-img"/></center>
 
-                <div class="row">
-                    <div class="col s6">
-                        <img class="responsive-img" src="{{foto}}">
+                            </div>
+
+                        </section>
                     </div>
-                    <div class="col s6">
-                        <button id="tomar-foto" class="btn waves-effect waves-light blue-grey darken-3">Editar Foto</button>
+                    <div style="margin-top: 5px;" class="col s12">
+                        <center><button id="tomar-foto" class="btn waves-effect waves-light blue-grey darken-3">Editar Foto</button></center>
                     </div>
-                </div>
+
 
             {{/if}}
 
 
 
-            <form id="guardar-perfil" class="col s12">
+            <form id="guardar-perfil" style="padding-top:40px;" class="col s12">
 
                 <div class="row">
                     <div class="input-field col s6">

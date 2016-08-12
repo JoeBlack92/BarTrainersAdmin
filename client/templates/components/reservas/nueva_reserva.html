@@ -7,6 +7,7 @@
                 <input id="datepicker" type="date" class="datepicker">
                 <label for="datepicker">Fecha</label>
             </div>
+
             <div {{activarHoraInicio}} class="input-field col s12">
                 <div class="hora-inicio select-wrapper"><span class="caret">▼</span>
                     <select id="hora-inicio" class="initialized">
@@ -33,6 +34,21 @@
                     </select>
                 </div>
                 <label>Horas</label>
+            </div>
+            <div {{activarBarras}} class="input-field col s12">
+                <div class="barras select-wrapper"><span class="caret">▼</span>
+                    <select id="barras" class="initialized">
+                        <option value="" disabled="" selected="">Barras</option>
+                        <option value="1">Barra 1</option>
+                        <option value="2">Barra 2</option>
+                        <option value="3">Barra 3</option>
+                        <option value="4">Barra 4</option>
+                        <option value="5">Barra 5</option>
+                        <option value="6">Barra 6</option>
+                        <option value="7">Barra 7</option>
+                    </select>
+                </div>
+                <label>Barra a resevar</label>
             </div>
 
             <button class="blue-grey darken-3 btn waves-effect waves-light" type="submit" name="action">Reservar

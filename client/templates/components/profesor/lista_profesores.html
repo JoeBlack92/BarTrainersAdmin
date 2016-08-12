@@ -1,32 +1,34 @@
 <template name="listaProfesores">
 
-    <div class="container">
-        <div class="row">
-            <ul class="collection">
+
 
                 {{#each profesores}}
 
-                    <li class="collection-item avatar">
-                        <img src="{{profile.foto}}" alt="" class="circle">
-                        <span class="title">Usuario: {{username}}</span>
-                        <p>
-                            Nombre: {{profile.nombre}}
-                            <br>
-                            Apellido: {{profile.apellido}}
-                            <br>
-                            Email: {{emails.[0].address}}
-                        </p>
-                        <a href="{{pathFor 'fichaProfesor'}}" class="secondary-content">
-                            <i style="font-size: 22px;" class="blue-grey-text text-darken-3 fa fa-pencil" aria-hidden="true"></i>
-                        </a>
-                    </li>
+
+                    <div class="card-panel beig " style="margin-top: 0px; margin-bottom: 0px;">
+                        <div class="row" style="height: 100px; ">
+                            <div class="col s4 m2 l2 no-pad-top no-pad-bot" >
+                               <div style="margin-top: 0px;  background-image: url('{{profile.foto}}');" class="circular avatar center "></div></div>
+                            <div class="col s7 m9 l9 no-pad-top no-pad-bot">
+                                <p style="color: #fff;">
+                                    <span style="font-size: 24px;">{{profile.nombre}} {{profile.apellido}}</span>
+                                    <br/>
+                                <div class="row">
+                                    Email: {{emails.[0].address}}
+                                </div>
+                                </p>
+                            </div>
+                            <div class="col s1 m1 l1">
+                                <a href="{{pathFor 'fichaProfesor'}}" class="secondary-content">
+                                    <i style="font-size: 22px; color: #fff;" class=" fa fa-pencil" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
 
                 {{/each}}
 
-            </ul>
 
-        </div>
-    </div>
 
     <div class="fixed-action-btn ">
         <a href="{{pathFor 'nuevoProfesor'}}" class="btn-floating btn-large blue-grey darken-3">

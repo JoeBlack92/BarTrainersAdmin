@@ -5,15 +5,16 @@ Template.nuevaReserva.onCreated(function () {
     instance.fechaReserva = new ReactiveVar(false);
     instance.fechaInicio = new ReactiveVar(false);
     instance.fechaFin = new ReactiveVar(false);
-
-
+    instance.barra = new ReactiveVar(false);
 });
 
 
 Template.nuevaReserva.events({
 
 
-    'change #datepicker': function (e,t) {
+    //meteor.userId
+
+    'change #datepicker': function (e, t) {
 
         var fecha = picker.get('select', 'dd-mm-yyyy');
         t.fechaReserva.set(fecha);
@@ -21,9 +22,9 @@ Template.nuevaReserva.events({
 
     },
 
-    'change #hora-inicio': function (e,t) {
+    'change #hora-inicio': function (e, t) {
 
-        if(t.fechaReserva.get()){
+        if (t.fechaReserva.get()) {
             console.log($('#hora-inicio').find(":selected").text());
             var horaInicio = $('#hora-inicio').find(":selected").text();
             var string = t.fechaReserva.get() + " " + horaInicio;
@@ -31,28 +32,74 @@ Template.nuevaReserva.events({
 
             t.fechaInicio.set(fechaInicio.format());
             console.log(t.fechaInicio.get());
-        }else{
+        } else {
             alert('Seleccciona una fecha!');
         }
 
     },
 
-    'change #numero-horas': function (e,t) {
+    'change #numero-horas': function (e, t) {
 
 
-        if(t.fechaInicio.get()){
+        if (t.fechaInicio.get()) {
             var horas = $('#numero-horas').find(":selected").attr('value');
-            var fechaInicio = moment(Session.get('fecha-inicio'));
+            var fechaInicio = moment(t.fechaInicio.get());
             var fechaFin = fechaInicio.add(horas, 'hours');
 
             t.fechaFin.set(fechaFin.format());
             console.log(t.fechaFin.get());
-        }else {
-            alert('Seleccciona una hora de inicio!');
+        } else {
+            alert('Selecciona una hora de inicio!');
         }
 
-    }
+    },
 
+    'change #barras': function (e, t) {
+
+
+        var barra = $('#barras').find(":selected").attr('value');
+        console.log(barra);
+        t.barra.set(barra.toString());
+        console.log(t.barra.get());
+
+
+    },
+
+    'submit #nueva-reserva': function (e, t) {
+
+        e.preventDefault();
+
+        var datosReserva = {
+
+            fechaInicio: t.fechaInicio.get(),
+            fechaFin: t.fechaFin.get(),
+            fecha: moment(t.fechaInicio.get()).format('DD/MM/YYYY'),
+            horaIni: moment(t.fechaInicio.get()).format('hh:mm'),
+            horaFin: moment(t.fechaFin.get()).format('hh:mm'),
+            barra: t.barra.get(),
+            id_user: Meteor.userId()
+        };
+
+        if (!datosReserva.fechaInicio) {
+            return alert('Ingresa una fecha de inicio');
+        } else if (!datosReserva.fechaFin) {
+            return alert('Ingresa una fecha final');
+        } else if (!datosReserva.barra) {
+            return alert('Ingresa una barra a reservar');
+        }
+
+        Meteor.call('crearReserva', datosReserva, function (error, result) {
+
+            if (!error) {
+                Router.go('listaReservas');
+            } else {
+                console.log(error.reason);
+            }
+
+
+        });
+
+    }
 });
 
 
@@ -70,6 +117,15 @@ Template.nuevaReserva.helpers({
     activarHoras: function () {
 
         if(Template.instance().fechaInicio.get()){
+            return '';
+        }else{
+            return 'hidden';
+        }
+
+    },
+    activarBarras: function () {
+
+        if(Template.instance().fechaFin.get()){
             return '';
         }else{
             return 'hidden';
