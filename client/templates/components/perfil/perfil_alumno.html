@@ -1,0 +1,41 @@
+<template name="perfilAlumno">
+    <div class="row" >
+
+        <div style="padding-top: 40px;" class="container">
+
+                <div style="height: 40px" class="switch col s12" >
+                    <label>
+                        <div class="col s6">
+                           <span style="font-size: 16px;">Busco trabajo</span>
+                        </div>
+                        <div class="col s6 ">
+
+                            <input value="false" id="trabajo" type="checkbox" {{checkedTrabajo}}>
+                            <span style="float: right;" class="lever" ></span>
+
+                        </div>
+
+                    </label>
+                </div>
+            <div class="switch col s12" style="height: 40px" >
+                <label>
+                    <div class="col s6">
+                        <span style="font-size: 16px;">Horas Extras</span>
+                    </div>
+                    <div class="col s6 ">
+
+                        <input value="false" id="extras" type="checkbox" {{checkedExtras}}>
+                        <span style="float: right;" class="lever" ></span>
+
+                    </div>
+
+                </label>
+            </div>
+            </div>
+
+
+
+
+
+    </div>
+</template>

@@ -330,7 +330,9 @@ a.button-collapse.top-nav i {
     -moz-box-shadow: 0 0 8px rgba(0, 0, 0, 1);*/
 }
 
-
+.lineBeig-small{
+    border: 0.5px solid #e7e0cf;
+}
 
 section.profile::after {
     display: block;
@@ -395,4 +397,7 @@ section.profile::after {
 }
 #nav-mobile a{
     color:white;
+}
+body{
+    background-color: #414B4F;
 }
