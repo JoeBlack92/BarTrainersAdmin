@@ -15,6 +15,8 @@ Meteor.methods({
                 nombre: datosAlumno.nombre,
                 apellido: datosAlumno.apellido,
                 foto: datosAlumno.foto,
+                btrabajo: false,
+                extras: false, 
                 role: 'alumno'
             }
         });
@@ -25,17 +27,12 @@ Meteor.methods({
 
     editarAlumno: function (datosAlumno) {
 
-        Meteor.users.update({_id: datosAlumno._id},{$set: {
-            
-            username: datosAlumno.username,
-            'profile.foto': datosAlumno.foto,
-            'profile.nombre': datosAlumno.nombre,
-            'profile.apellido': datosAlumno.apellido,
-            'emails.0.address': datosAlumno.email
+        Meteor.users.update({_id: Meteor.userId()},{$set: {
+            'profile.btrabajo': datosAlumno.trabajo,
+            'profile.extras': datosAlumno.extras
         }});
 
     },
-
     eliminarAlumno: function (idAlumno) {
 
         if (Roles.userIsInRole(Meteor.userId(), ['admin'])) {

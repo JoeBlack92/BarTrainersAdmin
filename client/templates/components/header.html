@@ -28,31 +28,40 @@
                     </div>
                 </div>
             </li>
-            <li class="bold"><a href="{{pathFor 'dashboard'}}" class="waves-effect waves-teal">Inicio</a></li>
+            <li class="bold"><a href="{{pathFor 'dashboard'}}" class="waves-effect waves-teal">Inicio<i style="color: white" class="fa fa-2x fa-home " aria-hidden="true"></i>
+            </a></li>
             {{#if isInRole 'admin' }}
-                <li class="bold"><a href="{{pathFor 'listaAlumnos'}}" class="waves-effect waves-teal">Alumnos</a></li>
+                <li class="bold"><a href="{{pathFor 'listaAlumnos'}}" class="waves-effect waves-teal">Alumnos<i style="color: white" class="fa fa-2x fa-users" aria-hidden="true"></i>
+                </a></li>
             {{/if}}
             {{#if isInRole 'profesor' }}
-                <li class="bold"><a href="{{pathFor 'listaAlumnos'}}" class="waves-effect waves-teal">Alumnos</a></li>
+                <li class="bold"><a href="{{pathFor 'listaAlumnos'}}" class="waves-effect waves-teal">Alumnos<i style="color: white" class="fa fa-2x fa-users" aria-hidden="true"></i>
+                </a></li>
             {{/if}}
             {{#if isInRole 'admin'}}
-                <li class="bold"><a href="{{pathFor 'listaProfesores'}}" class="waves-effect waves-teal">Profesores</a></li>
+                <li class="bold"><a href="{{pathFor 'listaProfesores'}}" class="waves-effect waves-teal">Profesores<i style="color: white" class="fa fa-2x fa-graduation-cap" aria-hidden="true"></i></a></li>
             {{/if}}
 
             {{#if isInRole 'alumno'}}
-                <li class="bold"><a href="{{pathFor 'listaReservas'}}" class="waves-effect waves-teal">Reservas</a></li>
+                <li class="bold"><a href="{{pathFor 'listaReservas'}}" class="waves-effect waves-teal">Reservas<i style="color: white" class="fa fa-2x fa-glass" aria-hidden="true"></i></a></li>
             {{/if}}
             {{#if isInRole 'profesor'}}
-                <li class="bold"><a href="{{pathFor 'listaReservas'}}" class="waves-effect waves-teal">Reservas</a></li>
+                <li class="bold"><a href="{{pathFor 'listaReservas'}}" class="waves-effect waves-teal">Reservas<i style="color: white" class="fa fa-2x fa-glass" aria-hidden="true"></i></a></li>
             {{/if}}
             {{#if isInRole 'admin'}}
-                <li class="bold"><a href="{{pathFor 'listaReservas'}}" class="waves-effect waves-teal">Reservas</a></li>
+                <li class="bold"><a href="{{pathFor 'listaReservas'}}" class="waves-effect waves-teal">Reservas<i style="color: white" class="fa fa-2x fa-glass" aria-hidden="true"></i></a></li>
+            {{/if}}
+            {{#if isInRole 'alumno'}}
+                <li class="bold"><a href="{{pathFor 'perfilAlumno'}}" class="waves-effect waves-teal">Configuración<i style="color: white" class="fa fa-2x fa-cog" aria-hidden="true"></i>
+                </a></li>
             {{/if}}
 
-
-            <li class="bold"><a href="{{pathFor 'perfil'}}" class="waves-effect waves-teal">Configuración</a></li>
-
-            <li id="salir" class="bold"><a href="#" class="waves-effect waves-teal">Salir</a></li>
+            {{#if isInRole 'admin'}}
+                <li class="bold"><a href="{{pathFor 'perfil'}}" class="waves-effect waves-teal">Configuración<i style="color: white" class="fa fa-2x fa-cog" aria-hidden="true"></i>
+                </a></li>
+            {{/if}}
+            <li id="salir" class="bold"><a href="#" class="waves-effect waves-teal">Salir<i style="color: white" class="fa fa-2x fa-sign-out" aria-hidden="true"></i>
+            </a></li>
         </ul>
 
     </header>

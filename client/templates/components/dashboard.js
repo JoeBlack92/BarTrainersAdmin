@@ -29,7 +29,24 @@ Template.dashboard.events({
 });
 
 Template.dashboard.helpers({
+    colorTrabajo :function () {
+        var user = Meteor.user();
+        
+        if(user.profile.btrabajo){
+            return 'green'
+        }else{
+            return 'red'
+        }
+    },
+    colorExtra : function () {
+        var user = Meteor.user();
 
+        if(user.profile.extras){
+            return 'green'
+        }else{
+            return 'red'
+        }
+    }
 });
 
 
