@@ -401,3 +401,42 @@ section.profile::after {
 body{
     background-color: #414B4F;
 }
+.text-white{
+    color:white;
+}
+.input-field input[type=text]:focus + label {
+    color: white;
+
+}
+.input-field input[type=number]:focus + label {
+    color: white;
+
+}
+textarea:focus + label {
+    color: white !important;
+}
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid white;
+    box-shadow: 0 1px 0 0 white;
+}
+.input-field input[type=number]:focus {
+    border-bottom: 1px solid white;
+    box-shadow: 0 1px 0 0 white;
+}
+textarea:focus {
+    border-bottom: 1px solid white !important;
+    box-shadow: 0 1px 0 0 white !important;
+}
+.card-middle {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    padding: 10px;
+}
+
+h3{
+    padding: 5px;
+    margin: 0px;;
+}
