@@ -1,5 +1,22 @@
 Template.curso.helpers({
- //add you helpers here
+
+    listprofes: function () {
+
+        return Meteor.users.find({_id: {$in: this.profesores}});
+
+    },
+    listalumnos: function () {
+
+        return Meteor.users.find({_id: {$in: this.alumnos}});
+
+    },
+    
+    profesores: function () {
+        return Meteor.users.find({'roles.0' : 'profesor'});
+    },
+    alumnos: function () {
+        return Meteor.users.find({'roles.0' : 'alumno'});
+    }
 });
 Template.curso.onCreated(function() {
     var instance = this;
@@ -23,12 +40,46 @@ Template.curso.events({
 
             });
         }
-    }});
+    },
+
+    'click #assignar-profesor' : function () {
+
+
+        var profeId = $('#profes').find(":selected").attr('value');
+
+        if(profeId != null){
+            Meteor.call('anadirProfesor', this._id, profeId , function (error, result){
+
+                if (!error) {
+
+                } else {
+                    console.log(error.reason);
+                }
+            });
+        }
+
+    },
+    'click #assignar-alumno' : function () {
+
+        var alumnoId = $('#alum').find(":selected").attr('value');
+        if(alumnoId != null){
+            Meteor.call('anadirAlumno', this._id, alumnoId , function (error, result){
+
+                if (!error) {
+
+                } else {
+                    console.log(error.reason);
+                }
+            });
+        }
+
+    },
+});
 
 
 
 Template.curso.onRendered(function() {
-    //add your statement here
+    $('select').material_select();
 });
 
 Template.curso.onDestroyed(function() {
