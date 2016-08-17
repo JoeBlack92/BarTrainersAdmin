@@ -71,7 +71,7 @@ Meteor.methods({
 
 
 
-
+ 
     },
 
     anadirProfesor : function (cursoId, profesorId) {
