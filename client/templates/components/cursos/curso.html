@@ -1,0 +1,21 @@
+<template name="curso">
+
+
+        <div class="row no-padding text-white beig" style="height: 100px">
+            <h3 class="card-middle">{{nombre}}</h3>
+        </div>
+        <div class="row text-white">
+            <div class="col s12 m6 l6">
+               <p>Profesores:</p>
+
+            </div>
+            <div class="col s12 m6 l6">
+                <br>
+                <p>Horas: {{horas}}</p>
+                <p>Descripcion:</p>
+                <p style="text-align: justify;">{{desc}}</p>
+            </div>
+
+            <a id="eliminar-curso" style="margin: 10px" href="#" class=" modal-action modal-close waves-effect waves-red btn btn-block ">Eliminar</a>
+        </div>
+</template>

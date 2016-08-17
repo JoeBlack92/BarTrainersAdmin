@@ -1,0 +1,30 @@
+<template name="nuevoCurso">
+
+    <div class="row">
+
+        <form id="agregarCurso" class="col s12">
+            <h2 class="text-white">Nuevo Curso</h2>
+            <div class="row">
+                <div class="input-field col s12 l6 text-white">
+                    <input id="nombreCurso" type="text" class="text-white">
+                    <label for="nombre-curso">Nombre del Curso</label>
+                </div>
+                <div class="input-field col s12 l6 text-white">
+                    <input id="horas" type="number" >
+                    <label class="text-white" for="horas">Horas del Curso</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 text-white">
+                    <textarea id="descripcion" class="text-white materialize-textarea"></textarea>
+                    <label for="descripcion">Descripción del Curso</label>
+                </div>
+            </div>
+            <button class="blue-grey darken-3 btn waves-effect waves-light" type="submit" name="action">Crear
+                <i class="material-icons right">send</i>
+            </button>
+        </form>
+    </div>
+
+
+</template>

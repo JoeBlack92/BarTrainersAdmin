@@ -27,7 +27,7 @@ Template.nuevoProfesor.events({
         });
     },
 
-    'submit #agregarAlumno': function (e,t) {
+    'submit #agregarProfesor': function (e,t) {
 
         e.preventDefault();
 
