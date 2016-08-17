@@ -14,8 +14,8 @@ Meteor.methods({
             nombre: datosCurso.nombre,
             horas: datosCurso.horas,
             desc: datosCurso.desc,
-            alumnos: {},
-            profesores: {}
+            alumnos:[],
+            profesores:[]
 
         });
 
@@ -53,6 +53,7 @@ Meteor.methods({
         if (Roles.userIsInRole(Meteor.userId(), ['admin'])) {
 
             Cursos.remove({_id: cursoId});
+            Niveles.remove({cursoId: cursoId})
 
         }else{
 

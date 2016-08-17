@@ -6,16 +6,125 @@
         </div>
         <div class="row text-white">
             <div class="col s12 m6 l6">
-               <p>Profesores:</p>
+                        <p>Profesores:</p>
+                        {{#each listprofes}}
+
+                            <div class="col s2 no-pad-top no-pad-bot" >
+                                <div style=" margin-top: 0px; background-image: url('{{profile.foto}}');" class="circular3 avatar center "></div></div>
+                            <div class="col s10 no-pad-top no-pad-bot">
+                                <p>
+                                    <span style="font-size: 12px;">{{profile.nombre}} {{profile.apellido}}</span>
+                                </p>
+                            </div>
+
+                        {{/each}}
 
             </div>
             <div class="col s12 m6 l6">
                 <br>
                 <p>Horas: {{horas}}</p>
-                <p>Descripcion:</p>
+                <p>Descripción:</p>
                 <p style="text-align: justify;">{{desc}}</p>
             </div>
 
-            <a id="eliminar-curso" style="margin: 10px" href="#" class=" modal-action modal-close waves-effect waves-red btn btn-block ">Eliminar</a>
+
+
+
+            {{#if isInRole 'admin'}}
+                <div class="row" >
+                    <div class="col s12" style="border-bottom: 2px solid beige">
+                        <h4>Alumnos Inscritos</h4>
+                    </div>
+                    <div class="col s12" style="margin-top: 10px">
+                        {{#each listalumnos}}
+
+                            <div class="col s2 no-pad-top no-pad-bot" >
+                                <div style=" margin-top: 0px; background-image: url('{{profile.foto}}');" class="circular3 avatar center "></div></div>
+                            <div class="col s10 no-pad-top no-pad-bot">
+                                <p>
+                                    <span style="font-size: 12px;">{{profile.nombre}} {{profile.apellido}}</span>
+                                </p>
+                            </div>
+
+                        {{/each}}
+                    </div>
+                </div>
+                <div class="row">
+                <div class="input-field col s7 m9">
+
+                    <select id="profes">
+                        <option value="" disabled selected>Assignar Profesor</option>
+                        {{#each profesores}}
+                            <option value="{{_id}}"> {{profile.nombre}} {{profile.apellido}}</option>
+                        {{/each}}
+                    </select>
+                    <label>Profesores</label>
+                </div>
+                <div class="input-field col s5 m3">
+
+                    <a id="assignar-profesor" style="margin: 10px" href="#" class=" modal-action modal-close waves-effect waves-green btn btn-block ">Assignar</a>
+                </div>
+            </div>
+                <div class="row">
+                    <div class="input-field col s7 m9">
+
+                        <select id="alum">
+                            <option value="" disabled selected>Assignar Alumnos</option>
+                            {{#each alumnos}}
+                                <option value="{{_id}}"> {{profile.nombre}} {{profile.apellido}}</option>
+                            {{/each}}
+                        </select>
+                        <label>Alumnos</label>
+                    </div>
+                    <div class="input-field col s5 m3">
+
+                        <a id="assignar-alumno" style="margin: 10px" href="#" class=" modal-action modal-close waves-effect waves-green btn btn-block ">Assignar</a>
+                    </div>
+                </div>
+                <a id="eliminar-curso" style="margin: 10px" href="#" class=" modal-action modal-close waves-effect waves-red btn btn-block ">Eliminar</a>
+
+
+
+            {{/if}}
+            {{#if isInRole 'profesor'}}
+                <div class="row" >
+                    <div class="col s12" style="border-bottom: 2px bold beige">
+                        <h4>Alumnos Inscritos</h4>
+                    </div>
+                    <div class="col s12" style="margin-top: 10px">
+                        {{#each listalumnos}}
+
+                            <div class="col s2 no-pad-top no-pad-bot" >
+                                <div style=" margin-top: 0px; background-image: url('{{profile.foto}}');" class="circular3 avatar center "></div></div>
+                            <div class="col s10 no-pad-top no-pad-bot">
+                                <p>
+                                    <span style="font-size: 12px;">{{profile.nombre}} {{profile.apellido}}</span>
+                                </p>
+                            </div>
+
+                        {{/each}}
+                    </div>
+                </div><div class="row">
+                    <div class="input-field col s7 m9">
+
+                        <select id="alum">
+                            <option value="" disabled selected>Assignar Alumnos</option>
+                            {{#each alumnos}}
+                                <option value="{{_id}}"> {{profile.nombre}} {{profile.apellido}}</option>
+                            {{/each}}
+                        </select>
+                        <label>Alumnos</label>
+                    </div>
+                    <div class="input-field col s5 m3">
+
+                        <a id="assignar-alumno" style="margin: 10px" href="#" class=" modal-action modal-close waves-effect waves-green btn btn-block ">Assignar</a>
+                    </div>
+                </div>
+
+            {{/if}}
+
+
+
+
         </div>
 </template>
