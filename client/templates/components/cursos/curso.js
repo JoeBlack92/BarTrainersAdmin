@@ -12,10 +12,23 @@ Template.curso.helpers({
     },
     
     profesores: function () {
-        return Meteor.users.find({'roles.0' : 'profesor'});
+
+        return Meteor.users.find({$and: [
+            { 'roles.0' : 'profesor'},
+            { _id : {$nin: this.profesores}}
+        ]});
+        
+       
     },
     alumnos: function () {
-        return Meteor.users.find({'roles.0' : 'alumno'});
+
+       
+        return Meteor.users.find({$and: [
+            { 'roles.0' : 'alumno'},
+            { _id : {$nin: this.alumnos}}
+        ]});
+
+
     }
 });
 Template.curso.onCreated(function() {
@@ -66,7 +79,8 @@ Template.curso.events({
             Meteor.call('anadirAlumno', this._id, alumnoId , function (error, result){
 
                 if (!error) {
-
+                    var sel = document.getElementById('alum');
+                    sel.remove($('#alum').find(":selected").index('option'));
                 } else {
                     console.log(error.reason);
                 }
@@ -79,7 +93,6 @@ Template.curso.events({
 
 
 Template.curso.onRendered(function() {
-    $('select').material_select();
 });
 
 Template.curso.onDestroyed(function() {
