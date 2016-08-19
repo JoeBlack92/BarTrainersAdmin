@@ -1,37 +1,11 @@
-Template.perfilAlumno.helpers({
-    
-    checkedTrabajo : function () {
-        
-        var user = Meteor.user();
-        
-        if(user && user.profile.btrabajo){
-            return 'checked';
-        }else{
-            return '';
-        }
-        
-        
-    },
-    checkedExtras: function () {
 
-        var user = Meteor.user();
-        
-        if(user && user.profile.extras){
-            return 'checked';
-        }else{
-            return '';
-        }
-
-
-    }
-});
 
 Template.perfilAlumno.events({
 
     'change #trabajo': function () {
 
         var trabajo = $('#trabajo').val();
-        var extras = false;
+         var extras = $('#extras').val();
 
         if(trabajo == 'false'){
             $('#trabajo').val('true');
@@ -73,7 +47,7 @@ Template.perfilAlumno.events({
     'change #extras': function () {
 
         var extras = $('#extras').val();
-        var trabajo = false;
+        var trabajo = $('#trabajo').val();
 
 
         if(extras == 'false'){
@@ -116,7 +90,33 @@ Template.perfilAlumno.events({
     }
 
 });
+Template.perfilAlumno.helpers({
 
+    checkedTrabajo : function () {
+
+        var user = Meteor.user();
+
+        if(user && user.profile.btrabajo){
+            return 'checked';
+        }else{
+            return '';
+        }
+
+
+    },
+    checkedExtras: function () {
+
+        var user = Meteor.user();
+
+        if(user && user.profile.extras){
+            return 'checked';
+        }else{
+            return '';
+        }
+
+
+    }
+});
 Template.perfilAlumno.onCreated(function() {
 
   

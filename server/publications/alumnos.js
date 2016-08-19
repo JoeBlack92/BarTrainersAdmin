@@ -10,6 +10,7 @@ Meteor.publish('alumno', function (alumnoId) {
 
 });
 
+
 Meteor.publish('listaAlumnos', function () {
 
 
