@@ -4,7 +4,7 @@ Template.reserva.helpers({
 
 
         var user = Meteor.users.findOne({_id: this.id_user});
-        console.log(user.profile);
+      
         return Meteor.users.findOne({_id: this.id_user});
 
 

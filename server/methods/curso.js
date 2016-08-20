@@ -25,26 +25,29 @@ Meteor.methods({
     anadirAlumno : function (cursoId, alumnoId) {
 
 
-        Cursos.update({_id: cursoId}, {$push: {alumnos: alumnoId}});
 
-        Niveles.insert({
+                Cursos.update({_id: cursoId}, {$push: {alumnos: alumnoId}});
 
-            cursoId: cursoId,
-            alumnoId: alumnoId,
-            niveles: {
-                nivel1: false,
-                nivel2: false,
-                nivel3: false
-            }
+                Niveles.insert({
 
-        });
+                    cursoId: cursoId,
+                    alumnoId: alumnoId,
+                    niveles: {
+                        nivel1: false,
+                        nivel2: false,
+                        nivel3: false
+                    }
 
+                });
 
     },
 
     anadirProfesor : function (cursoId, profesorId) {
 
-        Cursos.update({_id: cursoId}, {$push: {profesores: profesorId}});
+
+
+                Cursos.update({_id: cursoId}, {$push: {profesores: profesorId}});
+        
 
     },
 

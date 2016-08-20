@@ -22,7 +22,7 @@
                 <div id="logo-container" class="brand-logo">
                     <div class="row">
                         <div class="col s12 profile-content">
-                            <img style="background-image: url('{{currentUser.profile.foto}}');" class=" avatar responsive-img">
+                            <img style="background-image: url('{{currentUser.profile.foto}}');" class=" circular avatar responsive-img">
                             <h1>{{currentUser.profile.nombre}} {{currentUser.profile.apellido}}</h1>
                         </div>
                     </div>
@@ -41,7 +41,12 @@
             {{#if isInRole 'admin'}}
                 <li class="bold"><a href="{{pathFor 'listaProfesores'}}" class="waves-effect waves-teal">Profesores<i style="color: white" class="fa fa-2x fa-graduation-cap" aria-hidden="true"></i></a></li>
             {{/if}}
+            {{#if isInRole 'alumno'}}
+                <li class="bold">
+                    <a href="{{pathFor 'listaNotificaciones'}}" class="waves-effect waves-teal"><div class="circle cercle-notific lineBeig-small red"><p>{{numeroNotificaciones}}</p></div>Notificaciones<i style="color: white" class="fa fa-2x fa-comment" aria-hidden="true"></i>
 
+                </a></li>
+            {{/if}}
             {{#if isInRole 'alumno'}}
                 <li class="bold"><a href="{{pathFor 'listaReservas'}}" class="waves-effect waves-teal">Reservas<i style="color: white" class="fa fa-2x fa-glass" aria-hidden="true"></i></a></li>
             {{/if}}
@@ -51,12 +56,22 @@
             {{#if isInRole 'admin'}}
                 <li class="bold"><a href="{{pathFor 'listaReservas'}}" class="waves-effect waves-teal">Reservas<i style="color: white" class="fa fa-2x fa-glass" aria-hidden="true"></i></a></li>
             {{/if}}
+            {{#if isInRole 'admin'}}
+                <li class="bold"><a href="{{pathFor 'listaEmpresas'}}" class="waves-effect waves-teal">Empresas<i style="color: white" class="fa fa-2x fa-building" aria-hidden="true"></i></a></li>
+            {{/if}}
+            {{#if isInRole 'admin'}}
+                <li class="bold"><a href="{{pathFor 'listaBusqueda'}}" class="waves-effect waves-teal">Bolsa de Empleo<i style="color: white" class="fa fa-2x fa-briefcase" aria-hidden="true"></i></a></li>
+            {{/if}}
+            {{#if isInRole 'empresa'}}
+                <li class="bold"><a href="{{pathFor 'listaBusqueda'}}" class="waves-effect waves-teal">Bolsa de Empleo<i style="color: white" class="fa fa-2x fa-briefcase" aria-hidden="true"></i></a></li>
+            {{/if}}
+            <li class="bold"><a href="{{pathFor 'listaCursos'}}" class="waves-effect waves-teal">Cursos<i style="color: white" class="fa fa-2x fa-book" aria-hidden="true"></i>
+        </a></li>
             {{#if isInRole 'alumno'}}
                 <li class="bold"><a href="{{pathFor 'perfilAlumno'}}" class="waves-effect waves-teal">Configuración<i style="color: white" class="fa fa-2x fa-cog" aria-hidden="true"></i>
                 </a></li>
             {{/if}}
-            <li class="bold"><a href="{{pathFor 'listaCursos'}}" class="waves-effect waves-teal">Cursos<i style="color: white" class="fa fa-2x fa-book" aria-hidden="true"></i>
-            </a></li>
+
             {{#if isInRole 'admin'}}
                 <li class="bold"><a href="{{pathFor 'perfil'}}" class="waves-effect waves-teal">Configuración<i style="color: white" class="fa fa-2x fa-cog" aria-hidden="true"></i>
                 </a></li>
