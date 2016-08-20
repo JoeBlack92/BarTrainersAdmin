@@ -59,7 +59,9 @@ Template.fichaAlumno.events({
     
     'click #tomar-foto': function (e,t) {
         MeteorCamera.getPicture({width: 200, height:250, quality:80}, function (error, data) {
-            if(!error){
+            if(error){
+                console.log(error);
+            }else{
                 t.foto.set(data);
             }
         });

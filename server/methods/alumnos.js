@@ -29,7 +29,8 @@ Meteor.methods({
 
         Meteor.users.update({_id: Meteor.userId()},{$set: {
             'profile.btrabajo': datosAlumno.trabajo,
-            'profile.extras': datosAlumno.extras
+            'profile.extras': datosAlumno.extras,
+            'profile.foto': datosAlumno.foto
         }});
 
     },

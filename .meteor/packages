@@ -21,7 +21,7 @@ iron:router
 materialize:materialize
 accounts-password
 msavin:mongol
-perak:camera
+mdg:camera
 session
 alanning:roles
 momentjs:moment

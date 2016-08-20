@@ -21,4 +21,12 @@ Meteor.startup(function () {
 
     }
 
+    var theURL = "https://bartrainers.herokuapp.com";
+    
+    Meteor.absoluteUrl.defaultOptions.rootUrl = theURL;
+    process.env.ROOT_URL = theURL;
+    process.env.MOBILE_ROOT_URL = theURL;
+    process.env.MOBILE_DDP_URL = theURL;
+    process.env.DDP_DEFAULT_CONNECTION_URL = theURL;
+
 });
