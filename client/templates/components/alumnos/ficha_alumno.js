@@ -61,6 +61,7 @@ Template.fichaAlumno.events({
         MeteorCamera.getPicture({width: 200, height:250, quality:80}, function (error, data) {
             if(error){
                 console.log(error);
+                
             }else{
                 t.foto.set(data);
             }
