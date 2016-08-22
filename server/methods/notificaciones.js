@@ -14,5 +14,16 @@ Meteor.methods({
             
         });
 
+    },
+    editarVista: function (idNoti) {
+
+ 
+
+       Notificaciones.update({_id: idNoti},{$set: {
+            
+            vista: true
+                        
+        }});
+
     }
 });

@@ -43,7 +43,7 @@
             {{/if}}
             {{#if isInRole 'alumno'}}
                 <li class="bold">
-                    <a href="{{pathFor 'listaNotificaciones'}}" class="waves-effect waves-teal"><div class="circle cercle-notific lineBeig-small red"><p>{{numeroNotificaciones}}</p></div>Notificaciones<i style="color: white" class="fa fa-2x fa-comment" aria-hidden="true"></i>
+                    <a href="{{pathFor 'listaNotificaciones'}}" class="waves-effect waves-teal">{{#if isVisible}}<div class="circle cercle-notific lineBeig-small red"><p>{{numeroNotis}}</p></div>{{/if}}Notificaciones<i style="color: white" class="fa fa-2x fa-comment" aria-hidden="true"></i>
 
                 </a></li>
             {{/if}}

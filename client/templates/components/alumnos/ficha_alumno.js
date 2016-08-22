@@ -48,7 +48,7 @@ Template.fichaAlumno.events({
             return alert('Ingresa un email');
         }
         
-        Meteor.call('editarAlumno', datosAlumno, function (error, result) {
+        Meteor.call('editarFichaAlumno', datosAlumno, function (error, result) {
            
             if(!error){
                 Router.go('listaAlumnos');
