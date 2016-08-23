@@ -1,15 +1,18 @@
 /**
  * Created by iw-poblenou2 on 10/8/16.
  */
-/*Reservas.remove({id_user:'K6NHEgztwwJFLrB7j'});*/
+
 Meteor.methods({
 
 
 
     crearReserva: function (datosReserva) {
         
-        Reservas.insert(datosReserva);
-        console.log(Reservas.find().fetch());
+        var id = Reservas.insert(datosReserva);
+        
+        return {
+            idReserva : id
+        }
 
     },
 

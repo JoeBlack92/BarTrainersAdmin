@@ -9,7 +9,7 @@ Meteor.publishComposite('dashboardAdmin', function(userId, limit) {
     return {
         
         find: function() {
-            return Meteor.users.find({$or :[{'roles.0' : 'alumno'},{'roles.0' : 'profesor'}]});
+            return Meteor.users.find({$or :[{'roles.0' : 'alumno'},{'roles.0' : 'profesor'},{'roles.0' : 'empresa'}]});
         },
         
         children: [

@@ -162,6 +162,8 @@
         <item url="file://$USER_HOME$/.meteor/packages/promise/0.7.3/web.browser/promise-tests.js" />
         <item url="file://$USER_HOME$/.meteor/packages/observe-sequence/1.0.12/web.browser/observe_sequence.js" />
         <item url="file://$USER_HOME$/.meteor/packages/ordered-dict/1.0.8/web.browser/ordered_dict.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/mdg_camera/1.4.1/web.browser/photo-browser.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/mdg_camera/1.4.1/web.browser/photo.js" />
         <item url="file://$USER_HOME$/.meteor/packages/id-map/1.0.8/web.browser/id-map.js" />
         <item url="file://$USER_HOME$/.meteor/packages/jquery/1.11.9/web.browser/jquery.js" />
         <item url="file://$USER_HOME$/.meteor/packages/jquery/1.11.9/web.browser/main.js" />
@@ -384,6 +386,8 @@
       <root url="file://$USER_HOME$/.meteor/packages/promise/0.7.3/web.browser/promise-tests.js" />
       <root url="file://$USER_HOME$/.meteor/packages/observe-sequence/1.0.12/web.browser/observe_sequence.js" />
       <root url="file://$USER_HOME$/.meteor/packages/ordered-dict/1.0.8/web.browser/ordered_dict.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/mdg_camera/1.4.1/web.browser/photo-browser.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/mdg_camera/1.4.1/web.browser/photo.js" />
       <root url="file://$USER_HOME$/.meteor/packages/id-map/1.0.8/web.browser/id-map.js" />
       <root url="file://$USER_HOME$/.meteor/packages/jquery/1.11.9/web.browser/jquery.js" />
       <root url="file://$USER_HOME$/.meteor/packages/jquery/1.11.9/web.browser/main.js" />

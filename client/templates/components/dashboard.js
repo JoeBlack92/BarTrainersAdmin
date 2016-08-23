@@ -24,8 +24,12 @@ Template.dashboard.events({
 
         Router.go('listaReservas');
 
-    }
+    },
+    'click #empresas': function () {
 
+        Router.go('listaEmpresas');
+
+    }
 });
 
 Template.dashboard.helpers({
