@@ -111,18 +111,24 @@ Template.nuevaReserva.events({
                 fecha: t.fechaReserva.get(),
                 barra: t.barra.get()
             };
-            Meteor.call("crearDia", datosDia);
+            Meteor.call("crearDia", datosDia, function (error, result) {
+
+                if(!error){
+                    var dia = Dias.findOne({ fecha:t.fechaReserva.get()});
+
+                    $.each(dia.horas, function (i, item) {
+                        if(item.libre == true){
+                            console.log(item.libre + item.hora);
+                            $('#hora-inicio').append('<option id="'+i+'"val="'+ item.hora +'">'+item.hora+'</option>');
+                        }
+
+                    });
+                    $('select').material_select();
+                }
+            })
+
         }
-        var dia = Dias.findOne({ fecha:t.fechaReserva.get()});
 
-        $.each(dia.horas, function (i, item) {
-            if(item.libre == true){
-                console.log(item.libre + item.hora);
-                $('#hora-inicio').append('<option id="'+i+'"val="'+ item.hora +'">'+item.hora+'</option>');
-            }
-
-        });
-        $('select').material_select();
     },
 
     'submit #nueva-reserva': function (e, t) {
