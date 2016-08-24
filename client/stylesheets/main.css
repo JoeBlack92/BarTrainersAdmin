@@ -618,9 +618,9 @@ textarea.materialize-textarea{
     color: #d1b687;
 }
 .lab-top{
-
+    color: #9e9e9e;
     position: absolute !important;
-    top: -14px !important;
+    top: -25px !important;
     font-size: 0.8rem !important;
 
 }
