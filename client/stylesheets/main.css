@@ -617,3 +617,10 @@ textarea.materialize-textarea{
 .picker__day.picker__day--today,.picker__close,.picker__today{
     color: #d1b687;
 }
+.lab-top{
+
+    position: absolute !important;
+    top: -14px !important;
+    font-size: 0.8rem !important;
+
+}

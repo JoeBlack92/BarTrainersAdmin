@@ -19,8 +19,8 @@ Template.nuevaReserva.events({
         var fecha = picker.get('select', 'dd-mm-yyyy');
         t.fechaReserva.set(fecha);
         console.log(t.fechaReserva.get());
-        
-        
+
+
 
     },
 
@@ -97,13 +97,14 @@ Template.nuevaReserva.events({
 
     'change #barras': function (e, t) {
 
-
+        $('#hora-inicio').find('option:not(:first)').remove();
+        $('select').material_select();
         var barra = $('#barras').find(":selected").attr('value');
         console.log(barra);
         t.barra.set(barra.toString());
         console.log(t.barra.get());
 
-        var count= Dias.find({ fecha:t.fechaReserva.get()}).count();
+        var count= Dias.find({ fecha:t.fechaReserva.get(), idBarra: t.barra.get()}).count();
         console.log("count:" + count);
 
         if(count == 0){
@@ -112,21 +113,34 @@ Template.nuevaReserva.events({
                 barra: t.barra.get()
             };
             Meteor.call("crearDia", datosDia, function (error, result) {
-
+                
                 if(!error){
-                    var dia = Dias.findOne({ fecha:t.fechaReserva.get()});
-
+                    var dia = Dias.findOne({ fecha:t.fechaReserva.get(), idBarra: t.barra.get()});
                     $.each(dia.horas, function (i, item) {
                         if(item.libre == true){
                             console.log(item.libre + item.hora);
+
                             $('#hora-inicio').append('<option id="'+i+'"val="'+ item.hora +'">'+item.hora+'</option>');
                         }
 
                     });
-                    $('select').material_select();
-                }
-            })
 
+                }else{
+                    console.log(error);
+                }
+            });
+
+        }else{
+            var dia2 = Dias.findOne({ fecha:t.fechaReserva.get(), idBarra: t.barra.get()});
+            $.each(dia2.horas, function (o, item2) {
+                if(item2.libre == true){
+                    console.log(item2.libre + item2.hora);
+
+                    $('#hora-inicio').append('<option id="'+o+'"val="'+ item2.hora +'">'+item2.hora+'</option>');
+                }
+
+            });
+            $('select').material_select();
         }
 
     },
