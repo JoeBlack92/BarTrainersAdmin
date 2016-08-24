@@ -2,6 +2,7 @@ Template.perfil.onCreated(function() {
 
     var instance = this;
     var user = Meteor.user();
+    // console.log("User foto: "+ user.profile.foto);
     if(user && user.profile.foto){
         instance.foto = new ReactiveVar(user.profile.foto);
     }else{
@@ -61,8 +62,11 @@ Template.perfil.events({
 });
 
 Template.perfil.helpers({
+
     foto: function () {
+
         return Template.instance().foto.get();
+
     },
     isAdmin: function () {
         if (Roles.userIsInRole(Meteor.userId(), ['admin'])) {

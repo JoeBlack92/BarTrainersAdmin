@@ -4,22 +4,14 @@ Template.perfilAlumno.events({
 
     'change #trabajo': function () {
 
-        var trabajo = $('#trabajo').val();
-         var extras = $('#extras').val();
+        var trabajo = $('#trabajo').prop('checked');
+        var extras= $('#extras').prop('checked');
 
-        if(trabajo == 'false'){
-            $('#trabajo').val('true');
-            trabajo = true;
-        }else{
-            $('#trabajo').val('false');
-            trabajo = false;
-        }
 
-        if($('#extras').val() == 'false'){
-            extras = false;
-        }else{
-            extras = true;
-        }
+        console.log("trabajo: "+trabajo
+        +"\nextras: "+ extras);
+
+
 
 
         var datosAlumno = {
@@ -46,25 +38,13 @@ Template.perfilAlumno.events({
     
     'change #extras': function () {
 
-        var extras = $('#extras').val();
-        var trabajo = $('#trabajo').val();
+        var trabajo = $('#trabajo').prop('checked');
+        var extras= $('#extras').prop('checked');
 
 
-        if(extras == 'false'){
-            $('#extras').val('true');
-            extras = true;
-        }else{
-            $('#extras').val('false');
-            extras = false;
-        }
+        console.log("trabajo: "+trabajo
+            +"\nextras: "+ extras);
 
-        if($('#trabajo').val()== 'false'){
-
-            trabajo = false;
-        }else{
-
-            trabajo = true;
-        }
 
         var datosAlumno = {
             trabajo: trabajo,
@@ -87,7 +67,7 @@ Template.perfilAlumno.events({
             }
 
         });
-    }
+  }
 
 });
 Template.perfilAlumno.helpers({
