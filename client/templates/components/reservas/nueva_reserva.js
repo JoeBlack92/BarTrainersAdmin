@@ -140,7 +140,7 @@ Template.nuevaReserva.events({
 
             fechaInicio: t.fechaInicio.get(),
             fechaFin: t.fechaFin.get(),
-            fecha: moment(t.fechaInicio.get()).format('DD/MM/YYYY'),
+            fecha: moment(t.fechaInicio.get()).format('DD-MM-YYYY'),
             horaIni: moment(t.fechaInicio.get()).format('hh:mm'),
             horaFin: moment(t.fechaFin.get()).format('hh:mm'),
             barra: t.barra.get(),

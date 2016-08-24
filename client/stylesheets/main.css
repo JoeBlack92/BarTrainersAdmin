@@ -583,10 +583,10 @@ select:not(:-internal-list-box) {
 }
 .btn, .btn-large {
 
-    background-color: #D1B687;
+    background-color: #d1b687;
 }
 .btn:hover, .btn-large:hover {
-    background-color: #D1B687;
+    background-color: #d1b687;
 }
 .cercle-notific {
     height: 20px;
@@ -607,4 +607,13 @@ select:not(:-internal-list-box) {
 }
 textarea.materialize-textarea{
     border-top: 1px solid #9e9e9e;
+}
+.picker__date-display{
+    background-color: #053951;
+}
+.picker__weekday-display {
+    background-color: #053951;
+}
+.picker__day.picker__day--today,.picker__close,.picker__today{
+    color: #d1b687;
 }

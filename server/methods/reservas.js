@@ -16,11 +16,26 @@ Meteor.methods({
 
     },
 
-    eliminarReserva: function (idReserva) {
+    eliminarReserva: function (datos) {
 
         if (Roles.userIsInRole(Meteor.userId(), ['admin'])) {
 
-            Reservas.remove({_id: idReserva})
+            console.log(datos);
+            
+
+            var dia = Dias.findOne({fecha: datos.fecha, idBarra:datos.barra});
+            
+            for(var i=0; i < dia.horas.length ; i++){
+
+                if(dia.horas[i].idReserva == datos.id){
+                    dia.horas[i].idReserva = "";
+                    dia.horas[i].libre = true;
+                }
+
+            }
+            
+            Dias.update({_id: dia._id}, {$set: dia});
+            Reservas.remove({_id: datos.id});
 
         } else {
 

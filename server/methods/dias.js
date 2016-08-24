@@ -39,7 +39,7 @@ Meteor.methods({
         var pos = datos.pos;
         var horaSet;
         var reservaSet;
-        
+        var query;
         console.log(
             "pos: " + pos
             +"horas:"+ datos.horas
@@ -47,15 +47,20 @@ Meteor.methods({
             +"fecha: " + fecha
         );
 
-        for(var i = 0; i < datos.horas-1; i++){
+        for(var i = 0; i < datos.horas; i++){
 
             horaSet = "horas." + pos+ ".libre";
             reservaSet = "horas." + pos+ ".idReserva";
 
+            query = {};
+            query[horaSet] = false;
+            query[reservaSet] = datos.idReserva;
+
             // var test = Dias.findOne({fecha:fecha , idBarra: datos.barra});
             // Algo no funciona aqui
             // console.log(test);
-            // Dias.update({fecha:fecha , idBarra: datos.barra},{$set: { horas.$<pos>.libre: false,  : datos.idReserva}});
+
+            Dias.update({fecha:fecha , idBarra: datos.barra},{$set:query});
 
             pos++;
 

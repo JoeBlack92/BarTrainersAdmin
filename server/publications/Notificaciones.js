@@ -19,12 +19,14 @@ Meteor.publish('notificacion', function (notiId) {
 
 Meteor.publishComposite('listaNotificaciones', function() {
 
+
+
         return {
 
                 find: function() {
 
 
-                        if(this.userId()){
+                        if(Notificaciones.find().count() > 0){
                                 return Notificaciones.find();
                         }else{
                                 return this.ready();
@@ -39,7 +41,7 @@ Meteor.publishComposite('listaNotificaciones', function() {
                                         if(noti){
                                                 return Meteor.users.find({_id: noti.idEmpresa});
                                         }else{
-                                                this.ready();
+                                               return this.ready();
                                         }
 
                                 }
