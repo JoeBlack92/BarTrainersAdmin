@@ -1,26 +1,30 @@
 <template name="listaEmpresas">
-    {{#each empresas}}
-        <div class="card-panel beig " style="margin-top: 0px; margin-bottom: 0px;">
-            <div class="row" style="height: 100px; ">
-                <div class="col s4 m2 l2 no-pad-top no-pad-bot" >
-                    <div style=" margin-top: 0px; background-image: url('{{profile.foto}}');" class="circular avatar center "></div></div>
-                <div class="col s7 m9 l9 no-pad-top no-pad-bot">
-                    <p style="color: #fff;">
-                        <span style="font-size: 24px;">{{profile.nombre}}</span>
-                        <br/>
-                    <div class="row">
-                        Email: {{emails.[0].address}}
+    <ul class="list hidden no-padding">
+        {{#each empresas}}
+            <li class="item" style="height: 160px; ">
+                <div class="card-panel beig " style="margin-top: 0px; margin-bottom: 0px;">
+                    <div class="row" style="height: 100px; ">
+                        <div class="col s5 m2 l2 no-pad-top no-pad-bot" >
+                            <div style=" margin-top: 0px; background-image: url('{{profile.foto}}');" class="circular avatar center "></div></div>
+                        <div class="col s6 m9 l9 no-pad-top no-pad-bot">
+                            <p style="color: #fff;">
+                                <span style="font-size: 24px;">{{profile.nombre}}</span>
+                                <br/>
+                            <div class="row">
+                                Email: {{emails.[0].address}}
+                            </div>
+                            </p>
+                        </div>
+                        <!--<div class="col s1 m1 l1">-->
+                            <!--<a href="{{pathFor 'fichaAlumno'}}" class="secondary-content">-->
+                                <!--<i style="font-size: 22px; color: #fff;" class=" fa fa-pencil" aria-hidden="true"></i>-->
+                            <!--</a>-->
+                        <!--</div>-->
                     </div>
-                    </p>
                 </div>
-                <!--<div class="col s1 m1 l1">-->
-                    <!--<a href="{{pathFor 'fichaAlumno'}}" class="secondary-content">-->
-                        <!--<i style="font-size: 22px; color: #fff;" class=" fa fa-pencil" aria-hidden="true"></i>-->
-                    <!--</a>-->
-                <!--</div>-->
-            </div>
-        </div>
-    {{/each}}
+            </li>
+        {{/each}}
+    </ul>
 
 
 

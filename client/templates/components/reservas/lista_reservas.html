@@ -17,12 +17,17 @@
         </div>
             {{#if isInRole 'admin' or isInRole 'profesor'}}
 
+
                 <div id="test1" class="col s12 no-padding">
-                    {{#each reservas}}
 
-                        {{>reserva}}
+                    <ul class="list hidden no-padding">
+                        {{#each reservas}}
 
-                    {{/each}}
+                            {{>reserva}}
+
+                        {{/each}}
+                    </ul>
+
                 </div>
             {{/if}}
 

@@ -2,10 +2,18 @@
  * Created by puesto1 on 3/8/16.
  */
 
+Template.listaAlumnos.onDestroyed(function () {
 
+    animateLeave();
+
+});
+Template.listaAlumnos.onRendered(function () {
+
+    setTimeout(animateEnter(), 1000);
+
+});
 Template.listaAlumnos.onCreated(function () {
 
-    var instance = this;
 
 });
 

@@ -641,3 +641,6 @@ textarea.materialize-textarea{
     max-width: 300px;
     overflow: hidden;
 }
+div{
+    font-size: 1.7vh;
+}

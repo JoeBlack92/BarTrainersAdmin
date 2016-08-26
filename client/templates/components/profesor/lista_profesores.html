@@ -1,15 +1,15 @@
 <template name="listaProfesores">
 
-
+    <ul class="list hidden no-padding">
 
                 {{#each profesores}}
-
+                <li class="item" style="height: 160px; ">
 
                     <div class="card-panel beig " style="margin-top: 0px; margin-bottom: 0px;">
                         <div class="row" style="height: 100px; ">
-                            <div class="col s4 m2 l2 no-pad-top no-pad-bot" >
+                            <div class="col s5 m2 l2 no-pad-top no-pad-bot" >
                                <div style="margin-top: 0px;  background-image: url('{{profile.foto}}');" class="circular avatar center "></div></div>
-                            <div class="col s7 m9 l9 no-pad-top no-pad-bot">
+                            <div class="col s6 m9 l9 no-pad-top no-pad-bot">
                                 <p style="color: #fff;">
                                     <span style="font-size: 24px;">{{profile.nombre}} {{profile.apellido}}</span>
                                     <br/>
@@ -25,9 +25,9 @@
                             </div>
                         </div>
                     </div>
-
+                </li>
                 {{/each}}
-
+</ul>
 
 
     <div class="fixed-action-btn ">
