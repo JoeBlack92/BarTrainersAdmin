@@ -13,10 +13,11 @@ Template.listaCursos.onCreated(function() {
 });
 
 Template.listaCursos.onRendered(function() {
-    //add your statement here
+    setTimeout(animateEnter(), 1000);
+    
 });
 
 Template.listaCursos.onDestroyed(function() {
-    //add your statement here
+    animateLeave();
 });
 

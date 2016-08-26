@@ -1,7 +1,7 @@
 /**
  * Created by iw-poblenou2 on 26/8/16.
  */
-NIMATION_END = 'webkitAnimationEnd oanimationend msAnimationEnd animationend';
+ANIMATION_END = 'webkitAnimationEnd oanimationend msAnimationEnd animationend';
 
 debouncer = function (fn) {
     var stack = [];

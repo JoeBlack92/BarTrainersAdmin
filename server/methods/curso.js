@@ -37,7 +37,15 @@ Meteor.methods({
                
 
     },
-    
+    eliminarAlumnoCurso: function (cursoId, alumnoId) {
+
+
+        Cursos.update({_id: cursoId }, { $pull: { alumnos: alumnoId } },{ multi: true });
+
+        Niveles.remove({idCurso: cursoId , idAlumno: alumnoId});
+
+    },
+
     anadirEjecicio : function (cursoId, nameEje) {
 
         var datos = {name: nameEje, finalizado: false};
@@ -46,9 +54,22 @@ Meteor.methods({
         
         Cursos.update({_id: cursoId}, {$push: {ejercicios: nameEje}});
 
-        Niveles.update({idCurso: cursoId},{$push: {ejercicios: datos}});
+        Niveles.update({idCurso: cursoId},{$push: {ejercicios: datos}},{multi:true});
         
-    },   
+    },
+
+    eliminarEjercicio: function (cursoId, nameEje) {
+
+        console.log("Cursoid:  "+cursoId
+            +"   name: "+ nameEje);
+        
+        Cursos.update({_id: cursoId}, {$pull: {ejercicios: nameEje}});
+
+        Niveles.update({idCurso: cursoId},{$pull: {ejercicios: { name: nameEje}}},{multi:true});
+
+    },
+
+
 
     anadirProfesor : function (cursoId, profesorId) {
 

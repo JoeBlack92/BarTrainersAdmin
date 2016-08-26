@@ -14,7 +14,27 @@ Template.ejercicios.events({
       }else{
         alert("Ingresa el nombre del ejercicio");
       }
-  }
+  },
+
+
+    'click #borrar-ejerc' : function () {
+
+        var name = this.valueOf();
+
+        var retVal = confirm("Esta seguro de eliminar el ejercició?");
+        if( retVal == true ){
+
+            Meteor.call('eliminarEjercicio', Router.current().params._id,name, function (error, result) {
+
+                if(error){
+                    return alert(error.reason);
+                }
+            });
+        }
+
+    }
+
+
 
 });
 

@@ -1,5 +1,9 @@
 Template.curso.helpers({
 
+    idCurso: function () {
+        return Template.instance().idCurso.get();
+    },
+
     listprofes: function () {
 
         return Meteor.users.find({_id: {$in: this.profesores}});
@@ -32,7 +36,11 @@ Template.curso.helpers({
     }
 });
 Template.curso.onCreated(function() {
-    
+
+
+    var instance = this;
+
+    instance.idCurso = new ReactiveVar(this.data._id);
 
 });
 
@@ -66,6 +74,22 @@ Template.curso.events({
                 Router.go('listaCursos');
 
 
+            });
+        }
+    },
+    'click #borrar-alumno' : function (e,t) {
+
+
+        var retVal = confirm("Esta seguro de eliminar el alumno?");
+        if( retVal == true ){
+
+            console.log(Template.instance().idCurso.get() +"   "+ this._id);
+
+            Meteor.call('eliminarAlumnoCurso',Template.instance().idCurso.get(), this._id, function (error, result) {
+
+                if(error){
+                    return alert(error.reason);
+                }
             });
         }
     },
@@ -115,6 +139,7 @@ Template.curso.events({
 
 
 Template.curso.onRendered(function() {
+
     $('ul.tabs').tabs();
     $('ul.tabs').tabs('select_tab', 'tab_id');
 });
