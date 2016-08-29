@@ -1,14 +1,14 @@
 <template name="listaCursos">
     <ul class="list hidden no-padding">
         {{#each cursos}}
-            <li class="item" style="height: 160px; ">
+            <li class="item" style="height: 200px; ">
                 <a href="{{pathFor 'curso'}}" >
                     <div class="card-panel beig " style="margin-top: 0px; margin-bottom: 0px; padding: 0px;">
                         <div class="row" style=" margin-bottom: 0px;height: 200px">
                             <div class="col s12 card-middle" >
 
 
-                                    <i style="color: white" class="fa fa-2x fa-glass" aria-hidden="true"></i><span class="text-white" style="font-size: 25px;">&nbsp;&nbsp;{{nombre}}</span>
+                                    <i style="color: white" class="fa fa-2x fa-glass" aria-hidden="true"></i><h6 class="text-white">&nbsp;&nbsp;{{nombre}}</h6>
                                     <i style="color: white" class="fa fa-2x fa-angle-right secondary-content" aria-hidden="true"></i>
 
 

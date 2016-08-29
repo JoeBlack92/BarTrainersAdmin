@@ -13,7 +13,7 @@
         </div>
         <div id="cursoTab" class="col s12 no-padding">
             <div class="row no-padding text-white beig" style="height: 100px">
-            <h3 class="card-middle">{{nombre}}</h3>
+            <h4 class="card-middle">{{nombre}}</h4>
             </div>
             <div class="row text-white">
                 <div class="col s12 m6 l6">
@@ -53,12 +53,11 @@
                                 <div class="row">
                                     <a href="{{pathFor 'evaluar' IdCurso=idCurso IdAlumno=_id}}">
                                         <div class="col s2" >
-                                            <div style=" margin-top: 0px; background-image: url('{{profile.foto}}');" class="circular3 avatar center "></div></div>
+                                            <div style=" margin-top: 0px; background-image: url('{{profile.foto}}');" class="circular3 avatar center "></div>
+                                        </div>
                                         <div class="col s9" style="text-decoration: none">
                                             <p>
-                                                <span style="font-size: 12px;">{{profile.nombre}} {{profile.apellido}}</span>
-
-
+                                                <span style="font-size: 12px;">&nbsp;&nbsp;{{profile.nombre}} {{profile.apellido}}</span>
                                             </p>
 
                                         </div>

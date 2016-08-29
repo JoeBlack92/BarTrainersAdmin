@@ -1,16 +1,16 @@
 <template name="reserva">
     <li class="item">
     <div class="card-panel beig" style="margin-top: 0px; margin-bottom: 0px;">
-        <div class="row" style="height: 100px; margin-top: -15px;">
+        <div class="row" style="height: 120px; margin-top: -15px;">
         <div class="col s5 m2 l2 no-pad-top no-pad-bot" >
           <div style="margin-top: 15px;  background-image: url('{{user.profile.foto}}');" class="circular avatar center "></div></div>
         <div class="col s6 m9 l9 no-pad-top no-pad-bot">
             <p style="color: #fff;">
-                <span style="font-size: 24px;">{{user.profile.nombre}} {{user.profile.apellido}}</span>
+                <h6 style="font-size: 24px;">{{user.profile.nombre}} {{user.profile.apellido}}</h6>
                 <br/>
             <div class="row">
-                <div class="col s6 m6 l6 no-padding"> Fecha de Reserva: {{fecha}}</div>
-                <div class="col s6 m6 l6 no-padding"> Hora: <br/> {{horaIni}} a {{horaFin}}
+                <div class="col s12 m6 l6 no-padding"> Fecha de Reserva:<br> {{fecha}}</div>
+                <div class="col s12 m6 l6 no-padding"> Hora: <br/> {{horaIni}} a {{horaFin}}
                     <br/>
                     Barra: {{barra}}</div>
 

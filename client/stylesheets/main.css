@@ -641,13 +641,59 @@ textarea.materialize-textarea{
     max-width: 300px;
     overflow: hidden;
 }
-div{
-    font-size: 1.7vh;
-    text-decoration: none;
+@media screen and (min-width: 300px) and (max-width: 360px)
+{
+    div{
+        font-size:10px;
+        text-decoration: none;
+    }
+    .item{
+        font-size:10px !important;
+    }
+    h6{
+        font-size:18px !important;
+    }
+    span{
+        font-size:10px !important;
+    }
+
 }
+@media screen and (min-width: 361px) and (max-width: 790px)
+{
+    div{
+        font-size:12px;
+        text-decoration: none;
+    }
+    span{
+        font-size:12px !important;
+    }
+    .item{
+        font-size:12px !important;
+    }
+}
+@media screen and (min-width: 790px) and (max-width: 1080px)
+{
+    div{
+        font-size:12px;
+        text-decoration: none;
+    }
+    .item{
+        font-size:12px !important;
+    }
+}
+
 a{
     text-decoration:none !important;
 }
 span, i{
     color:white !important;
 }
+
+
+h6{
+    margin: 0px;
+}
+.dropdown-content li > span {
+    color: #053951 !important;
+    font-size: 12px !important;
+ }
