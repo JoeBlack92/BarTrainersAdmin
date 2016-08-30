@@ -9,6 +9,12 @@
                     <li class="tab col s6"><a id="excTab" class=" tap-a white-text" href="#ejerciciotab"><div>Ejecicios</div></a></li>
 
                 {{/if}}
+
+                {{#if isInRole 'profesor'}}
+
+                    <li class="tab col s6"><a id="excTab" class=" tap-a white-text" href="#ejerciciotab"><div>Ejecicios</div></a></li>
+
+                {{/if}}
              </ul>
         </div>
         <div id="cursoTab" class="col s12 no-padding">
@@ -19,15 +25,15 @@
                 <div class="col s12 m6 l6">
                     <p>Profesores:</p>
                     {{#each listprofes}}
-
-                        <div class="col s2" >
-                            <div style=" margin-top: 0px; background-image: url('{{profile.foto}}');" class="circular3 avatar center "></div></div>
-                        <div class="col s10">
-                            <p>
-                                <span style="font-size: 12px;">{{profile.nombre}} {{profile.apellido}}</span>
-                            </p>
-                        </div>
-
+                        <div class="row no-padding">
+                            <div class="col s2" >
+                                <div style=" margin-top: 0px; background-image: url('{{profile.foto}}');" class="circular3 avatar center "></div></div>
+                            <div class="col s10">
+                                <p>
+                                    <span style="font-size: 12px;">{{profile.nombre}} {{profile.apellido}}</span>
+                                </p>
+                            </div>
+                         </div>
                     {{/each}}
 
                 </div>
@@ -51,19 +57,28 @@
                             {{#each listalumnos}}
 
                                 <div class="row">
-                                    <a href="{{pathFor 'evaluar' IdCurso=idCurso IdAlumno=_id}}">
+
                                         <div class="col s2" >
                                             <div style=" margin-top: 0px; background-image: url('{{profile.foto}}');" class="circular3 avatar center "></div>
                                         </div>
-                                        <div class="col s9" style="text-decoration: none">
+                                        <div class="col s7" style="text-decoration: none">
                                             <p>
                                                 <span style="font-size: 12px;">&nbsp;&nbsp;{{profile.nombre}} {{profile.apellido}}</span>
+
                                             </p>
 
+
                                         </div>
-                                    </a>
-                                    <div class="col s1" style="text-decoration: none">
-                                        <i  id="borrar-alumno" style="margin-top:10px;" class="fa fa-2x fa-remove secondary-content"></i>
+
+                                    <div class="col s3" style="text-decoration: none">
+                                        <div class="col s6">
+                                            <a href="{{pathFor 'evaluar' IdCurso=idCurso IdAlumno=_id}}">
+                                                <i  style="margin-top:10px;" class="fa fa-2x fa-pencil-square-o secondary-content"></i>
+                                            </a>
+                                        </div>
+                                        <div class="col s6">
+                                            <i  id="borrar-alumno" style="margin-top:10px;" class="fa fa-2x fa-remove secondary-content"></i>
+                                        </div>
 
                                     </div>
 
@@ -120,13 +135,34 @@
                             {{#each listalumnos}}
                                 <div class="row">
 
-                                    <div class="col s2" >
-                                        <div style=" margin-top: 0px; background-image: url('{{profile.foto}}');" class="circular3 avatar center "></div></div>
-                                    <div class="col s10">
-                                        <p>
-                                            <span style="font-size: 12px;">{{profile.nombre}} {{profile.apellido}}</span>
-                                        </p>
+                                        <div class="col s2" >
+                                            <div style=" margin-top: 0px; background-image: url('{{profile.foto}}');" class="circular3 avatar center "></div>
+                                        </div>
+                                        <div class="col s7" style="text-decoration: none">
+                                            <p>
+                                                <span style="font-size: 12px;">&nbsp;&nbsp;{{profile.nombre}} {{profile.apellido}}</span>
+                                            </p>
+
+
+                                        </div>
+
+                                    <div class="col s3" style="text-decoration: none">
+                                        <div class="col s6">
+                                            {{#if esProfe}}
+                                                <a href="{{pathFor 'evaluar' IdCurso=idCurso IdAlumno=_id}}">
+                                                    <i  style="margin-top:10px;" class="fa fa-2x fa-pencil-square-o secondary-content"></i>
+                                                </a>
+                                            {{/if}}
+                                        </div>
+                                        <div class="col s6">
+                                            <i  id="borrar-alumno" style="margin-top:10px;" class="fa fa-2x fa-remove secondary-content"></i>
+                                        </div>
+
+
                                     </div>
+
+
+
                                 </div>
 
                             {{/each}}
@@ -158,10 +194,17 @@
             </div>
 
         </div>
+    {{#if isInRole 'profesor'}}
         <div id="ejerciciotab" class="col s12 no-padding">
             {{>ejercicios}}
         </div>
+    {{/if}}
 
+        {{#if isInRole 'admin'}}
+            <div id="ejerciciotab" class="col s12 no-padding">
+                {{>ejercicios}}
+            </div>
+        {{/if}}
     </div>
 
 

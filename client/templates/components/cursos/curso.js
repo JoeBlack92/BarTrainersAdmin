@@ -33,6 +33,17 @@ Template.curso.helpers({
         ]});
 
 
+    },
+    esProfe: function () {
+
+        if(Cursos.findOne({profesores: Meteor.user()._id}))
+        {
+            return true;
+        }
+        else{
+            return false;
+        }
+
     }
 });
 Template.curso.onCreated(function() {
