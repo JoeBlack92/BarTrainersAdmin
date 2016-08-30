@@ -17,7 +17,6 @@ Template.mainLayout.onRendered(function () {
 
     instance.autorun(function () {
 
-
         if(Meteor.Device.isPhone()){
             $('.button-collapse').sideNav({
                 closeOnClick: true,

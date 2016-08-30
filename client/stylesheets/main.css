@@ -320,6 +320,8 @@ a.button-collapse.top-nav i {
 .circular {
     width: 100px;
     height: 100px;
+    background-size:cover;
+    background-position: center;
     border-radius: 50px;
     border: 3px solid #e7e0cf;
     webkit-border-radius: 50px;
@@ -328,22 +330,12 @@ a.button-collapse.top-nav i {
     -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 1);
     -moz-box-shadow: 0 0 8px rgba(0, 0, 0, 1);*/
 }
-.circular-grande {
-    width: 300px;
-    height: 300px;
-    background-size:135%;
-    border-radius: 150px;
-    border: 3px solid #e7e0cf;
-    webkit-border-radius: 150px;
-    -moz-border-radius: 150px;
-    /* box-shadow: 0 0 8px rgba(0, 0, 0, 1);
-    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 1);
-    -moz-box-shadow: 0 0 8px rgba(0, 0, 0, 1);*/
-}
+
 .circular2 {
     width: 150px;
     height: 150px;
-
+    background-size:cover;
+    background-position: center;
     border-radius: 75px;
     border: 3px solid #e7e0cf;
     webkit-border-radius: 75px;
@@ -355,7 +347,8 @@ a.button-collapse.top-nav i {
 .circular3{
     width: 50px;
     height: 50px;
-
+    background-size:cover;
+    background-position: center;
     border-radius: 25px;
     border: 3px solid #e7e0cf;
     webkit-border-radius: 25px;
@@ -644,17 +637,28 @@ textarea.materialize-textarea{
 @media screen and (min-width: 300px) and (max-width: 360px)
 {
     div{
-        font-size:10px;
+        font-size:12px;
         text-decoration: none;
     }
     .item{
         font-size:10px !important;
     }
-    h6{
-        font-size:18px !important;
+
+    .span-title{
+        font-size: 19px;
     }
-    span{
-        font-size:10px !important;
+    .circular-grande {
+        width: 160px;
+        height: 160px;
+        background-size:cover;
+        background-position: center;
+        border-radius: 150px;
+        border: 3px solid #e7e0cf;
+        webkit-border-radius: 150px;
+        -moz-border-radius: 150px;
+        /* box-shadow: 0 0 8px rgba(0, 0, 0, 1);
+        -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 1);
+        -moz-box-shadow: 0 0 8px rgba(0, 0, 0, 1);*/
     }
 
 }
@@ -664,14 +668,28 @@ textarea.materialize-textarea{
         font-size:12px;
         text-decoration: none;
     }
-    span{
-        font-size:12px !important;
-    }
+
     .item{
         font-size:12px !important;
     }
+    .span-title{
+        font-size:21px;
+    }
+    .circular-grande {
+        width: 160px;
+        height: 160px;
+        background-size:cover;
+        background-position: center;
+        border-radius: 150px;
+        border: 3px solid #e7e0cf;
+        webkit-border-radius: 150px;
+        -moz-border-radius: 150px;
+        /* box-shadow: 0 0 8px rgba(0, 0, 0, 1);
+        -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 1);
+        -moz-box-shadow: 0 0 8px rgba(0, 0, 0, 1);*/
+    }
 }
-@media screen and (min-width: 790px) and (max-width: 1080px)
+@media screen and (min-width: 790px) and (max-width: 1500px)
 {
     div{
         font-size:12px;
@@ -680,15 +698,34 @@ textarea.materialize-textarea{
     .item{
         font-size:12px !important;
     }
+    .span-title{
+        font-size:35px;
+    }
+
+    .circular-grande {
+        width: 260px;
+        height: 260px;
+        background-size:cover;
+        background-position: center;
+        border-radius: 150px;
+        border: 3px solid #e7e0cf;
+        webkit-border-radius: 150px;
+        -moz-border-radius: 150px;
+        /* box-shadow: 0 0 8px rgba(0, 0, 0, 1);
+        -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 1);
+        -moz-box-shadow: 0 0 8px rgba(0, 0, 0, 1);*/
+    }
 }
 
 a{
     text-decoration:none !important;
 }
-span, i{
+span i{
     color:white !important;
 }
-
+h4{
+    margin: 0px;
+}
 
 h6{
     margin: 0px;
@@ -697,3 +734,26 @@ h6{
     color: #053951 !important;
     font-size: 12px !important;
  }
+p,i{
+    color: white!important;
+}
+.ejercicios{
+    font-size:18px;
+}
+.tap-a{
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+video {
+    width: 250px;
+    height: 250px;
+
+}
+.viewfinder{
+    height:290px !important;
+}
+.camera-popup .photo-preview {
+    width: 250px !important;
+}

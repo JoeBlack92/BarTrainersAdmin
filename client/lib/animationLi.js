@@ -36,7 +36,7 @@ animateEnter = function  () {
     }));
 
 
-}
+};
 
 animateLeave = function () {
 
@@ -53,3 +53,5 @@ animateLeave = function () {
     //     puede = true;
     // }));
 }
+
+
