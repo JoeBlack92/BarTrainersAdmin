@@ -12,6 +12,14 @@ Template.registerHelper('count', function () {
 
 });
 
+Template.registerHelper('checked', function (val) {
+    
+    if(val){
+        return "checked";
+    }
+
+});
+
 Template.evaluar.helpers({
  listaeval: function () {
 
@@ -28,14 +36,23 @@ Template.evaluar.helpers({
 });
 
 Template.evaluar.events({
-  'change input' : function () {
+  'change input' : function (e,t) {
 
       var value = this.valueOf();
-      var val = $( "input:checked" ).val();
-      if(val == "undefined"){
-          val = false;
-      }
+
+      console.log(e.target);
+      var val = $(e.target).prop("checked");
+
+      console.log(val);
+
+
       console.log(value.name + " valor actual: " + val);
+      Meteor.call('evaluar',Router.current().params.IdCurso, Router.current().params.IdAlumno,value.name,val, function (error, result) {
+
+          if(error){
+              return alert(error.reason);
+          }
+      })
   }
 });
 

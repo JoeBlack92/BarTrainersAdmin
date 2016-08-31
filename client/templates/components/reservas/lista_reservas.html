@@ -4,7 +4,12 @@
         <div class="col s12 blue-grey darken-2">
             <ul class="tabs blue-grey darken-2">
 
-                {{#if isInRole 'admin' or isInRole 'profesor'}}
+                {{#if isInRole 'admin'}}
+                    <li class="tab col s6">
+                        <a class="white-text  active" href="#test1">Lista Reservas</a>
+                    </li>
+                {{/if}}
+                {{#if isInRole 'profesor'}}
                     <li class="tab col s6">
                         <a class="white-text  active" href="#test1">Lista Reservas</a>
                     </li>
@@ -16,7 +21,7 @@
                  {{/if}}
             </ul>
         </div>
-            {{#if isInRole 'admin' or isInRole 'profesor'}}
+            {{#if isInRole 'admin'  }}
 
 
                 <div id="test1" class="col s12 no-padding">
@@ -31,7 +36,19 @@
 
                 </div>
             {{/if}}
+        {{#if isInRole 'profesor' }}
+            <div id="test1" class="col s12 no-padding">
 
+                <ul class="list hidden no-padding">
+                    {{#each reservas}}
+
+                        {{>reserva}}
+
+                    {{/each}}
+                </ul>
+
+            </div>
+        {{/if}}
             {{#if isInRole 'alumno'}}
                 <div id="test2" class="col s12 no-padding">
 
