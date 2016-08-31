@@ -13,7 +13,7 @@ Meteor.publish('alumno', function (alumnoId) {
 
 Meteor.publish('listaAlumnos', function () {
 
-
+    Meteor._sleepForMs(20000);
     if(Roles.userIsInRole(this.userId ,['admin', 'profesor'])){
         return Meteor.users.find({'roles.0' : 'alumno'});
     }

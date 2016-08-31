@@ -18,8 +18,8 @@
              </ul>
         </div>
         <div id="cursoTab" class="col s12 no-padding">
-            <div class="row no-padding text-white beig" style="height: 100px">
-            <h4 class="card-middle">{{nombre}}</h4>
+            <div class="row no-padding text-white beig">
+            <h5 class="curso-title">{{nombre}}</h5>
             </div>
             <div class="row text-white">
                 <div class="col s12 m6 l6">
@@ -50,8 +50,9 @@
 
                 {{#if isInRole 'admin'}}
                     <div class="row" >
-                        <div class="col s12" style="border-bottom: 2px solid beige">
-                            <h4>Alumnos Inscritos</h4>
+                        <div class="col s12">
+                            <h5 class="text-center">Alumnos Inscritos</h5>
+                            <hr>
                         </div>
                         <div class="col s12" style="text-decoration: none; margin-top: 20px">
                             {{#each listalumnos}}
@@ -92,9 +93,9 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col s7 m9">
+                        <div class="col s12 m9">
                             <label>&nbsp;</label>
-                            <select class="soflow" id="profes">
+                            <select class="soflow" id="profes" style="margin: 0;">
                                 <option value="" disabled selected>Assignar Profesor</option>
                                 {{#each profesores}}
                                     <option value="{{_id}}"> {{profile.nombre}} {{profile.apellido}}</option>
@@ -102,15 +103,15 @@
                             </select>
 
                         </div>
-                        <div class="input-field col s5 m3">
+                        <div class="input-field col s12 m3">
 
-                            <a id="assignar-profesor" style="margin: 10px" href="#" class=" modal-action modal-close waves-effect waves-green btn btn-block ">Assignar</a>
+                            <a id="assignar-profesor" href="#" class="full-width-button waves-effect waves-green btn btn-block ">Assignar</a>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col s7 m9">
+                        <div class="col s12 m9">
                             <label>&nbsp;</label>
-                            <select class="soflow" id="alum">
+                            <select class="soflow" id="alum" style="margin: 0;">
                                 <option value="" disabled selected>Assignar Alumnos</option>
                                 {{#each alumnos}}
                                     <option value="{{_id}}"> {{profile.nombre}} {{profile.apellido}}</option>
@@ -118,14 +119,16 @@
                             </select>
 
                         </div>
-                        <div class="input-field col s5 m3">
+                        <div class="input-field col s12 m3">
 
-                            <a id="assignar-alumno" style="margin: 10px" href="#" class=" modal-action modal-close waves-effect waves-green btn btn-block ">Assignar</a>
+                            <a id="assignar-alumno" href="#" class="full-width-button waves-effect waves-green btn btn-block ">Assignar</a>
                         </div>
                     </div>
-                    <a id="eliminar-curso" style="margin: 10px" href="#" class=" modal-action modal-close waves-effect waves-red btn btn-block ">Eliminar</a>
-
-
+                    <div class="row">
+                        <div class="col s12">
+                            <a id="eliminar-curso" href="#" class="eliminar-button full-width-button waves-effect waves-red btn btn-block ">Eliminar</a>
+                        </div>
+                    </div>
 
                 {{/if}}
                 {{#if isInRole 'profesor'}}

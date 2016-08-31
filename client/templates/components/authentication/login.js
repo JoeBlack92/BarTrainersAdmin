@@ -15,7 +15,9 @@ Template.login.events({
         };
 
         Meteor.loginWithPassword(datosLogin.email, datosLogin.password, function (error) {
-            if(!error){
+            if(error){
+                alert('Comprueba tus datos');
+            }else{
                 Router.go('dashboard');
             }
         });
