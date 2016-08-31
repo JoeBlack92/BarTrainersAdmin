@@ -1,5 +1,9 @@
 Template.curso.helpers({
 
+    idCurso: function () {
+        return Template.instance().idCurso.get();
+    },
+
     listprofes: function () {
 
         return Meteor.users.find({_id: {$in: this.profesores}});
@@ -29,13 +33,43 @@ Template.curso.helpers({
         ]});
 
 
+    },
+    esProfe: function () {
+
+        if(Cursos.findOne({profesores: Meteor.user()._id}))
+        {
+            return true;
+        }
+        else{
+            return false;
+        }
+
     }
 });
 Template.curso.onCreated(function() {
+
+
     var instance = this;
+
+    instance.idCurso = new ReactiveVar(this.data._id);
+
 });
 
 Template.curso.events({
+
+    'click #excTab' : function () {
+        console.log("puede: "+ puede);
+        if(puede){
+        setTimeout(animateEnter(), 1000);
+        }
+    },
+    'click #cursTab' : function () {
+        console.log("puede: "+ puede);
+        if(!puede){
+        animateLeave();
+        }
+    },
+
     'click #eliminar-curso' : function (e,t) {
 
 
@@ -51,6 +85,22 @@ Template.curso.events({
                 Router.go('listaCursos');
 
 
+            });
+        }
+    },
+    'click #borrar-alumno' : function (e,t) {
+
+
+        var retVal = confirm("Esta seguro de eliminar el alumno?");
+        if( retVal == true ){
+
+            console.log(Template.instance().idCurso.get() +"   "+ this._id);
+
+            Meteor.call('eliminarAlumnoCurso',Template.instance().idCurso.get(), this._id, function (error, result) {
+
+                if(error){
+                    return alert(error.reason);
+                }
             });
         }
     },
@@ -75,8 +125,15 @@ Template.curso.events({
     'click #assignar-alumno' : function () {
 
         var alumnoId = $('#alum').find(":selected").attr('value');
+
+        var datos=[];
+
+        $.each(this.ejercicios, function( index, value ) {
+            datos.push({name: value, finalizado: false});
+        });
+
         if(alumnoId != null){
-            Meteor.call('anadirAlumno', this._id, alumnoId , function (error, result){
+            Meteor.call('anadirAlumno', this._id, alumnoId, datos, function (error, result){
 
                 if (!error) {
                     var sel = document.getElementById('alum');
@@ -93,6 +150,9 @@ Template.curso.events({
 
 
 Template.curso.onRendered(function() {
+
+    $('ul.tabs').tabs();
+    $('ul.tabs').tabs('select_tab', 'tab_id');
 });
 
 Template.curso.onDestroyed(function() {

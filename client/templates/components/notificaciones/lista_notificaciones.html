@@ -1,3 +1,16 @@
 <template name="listaNotificaciones">
 
+    {{#each notificaciones}}
+
+    <a href="{{pathFor 'notificacion'}}" >{{>itemNotificacion}}</a>
+
+    {{/each}}
+</template>
+
+
+<template name="itemNotificacion">
+    <div id="noti" class="row beig text-white">
+        <div class="col s6"><h4>{{empresa.profile.nombre}}</h4></div>
+        <div class="col s6">{{#if vista}}<i class="fa fa-eye secondary-content fa-2x" aria-hidden="true"></i>{{/if}}</div>
+    </div>
 </template>

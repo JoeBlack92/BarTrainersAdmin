@@ -320,7 +320,8 @@ a.button-collapse.top-nav i {
 .circular {
     width: 100px;
     height: 100px;
-
+    background-size:cover;
+    background-position: center;
     border-radius: 50px;
     border: 3px solid #e7e0cf;
     webkit-border-radius: 50px;
@@ -329,10 +330,25 @@ a.button-collapse.top-nav i {
     -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 1);
     -moz-box-shadow: 0 0 8px rgba(0, 0, 0, 1);*/
 }
+
+.circular2 {
+    width: 150px;
+    height: 150px;
+    background-size:cover;
+    background-position: center;
+    border-radius: 75px;
+    border: 3px solid #e7e0cf;
+    webkit-border-radius: 75px;
+    -moz-border-radius: 75px;
+    /* box-shadow: 0 0 8px rgba(0, 0, 0, 1);
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 0 0 8px rgba(0, 0, 0, 1);*/
+}
 .circular3{
     width: 50px;
     height: 50px;
-
+    background-size:cover;
+    background-position: center;
     border-radius: 25px;
     border: 3px solid #e7e0cf;
     webkit-border-radius: 25px;
@@ -571,10 +587,10 @@ select:not(:-internal-list-box) {
 }
 .btn, .btn-large {
 
-    background-color: #D1B687;
+    background-color: #d1b687;
 }
 .btn:hover, .btn-large:hover {
-    background-color: #D1B687;
+    background-color: #d1b687;
 }
 .cercle-notific {
     height: 20px;
@@ -595,4 +611,149 @@ select:not(:-internal-list-box) {
 }
 textarea.materialize-textarea{
     border-top: 1px solid #9e9e9e;
+}
+.picker__date-display{
+    background-color: #053951;
+}
+.picker__weekday-display {
+    background-color: #053951;
+}
+.picker__day.picker__day--today,.picker__close,.picker__today{
+    color: #d1b687;
+}
+.lab-top{
+    color: #9e9e9e;
+    position: absolute !important;
+    top: -25px !important;
+    font-size: 0.8rem !important;
+
+}
+.avatar_container {
+    display: inline-block;
+    width: 35%;
+    max-width: 300px;
+    overflow: hidden;
+}
+@media screen and (min-width: 300px) and (max-width: 360px)
+{
+    div{
+        font-size:12px;
+        text-decoration: none;
+    }
+    .item{
+        font-size:10px !important;
+    }
+
+    .span-title{
+        font-size: 19px;
+    }
+    .circular-grande {
+        width: 160px;
+        height: 160px;
+        background-size:cover;
+        background-position: center;
+        border-radius: 150px;
+        border: 3px solid #e7e0cf;
+        webkit-border-radius: 150px;
+        -moz-border-radius: 150px;
+        /* box-shadow: 0 0 8px rgba(0, 0, 0, 1);
+        -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 1);
+        -moz-box-shadow: 0 0 8px rgba(0, 0, 0, 1);*/
+    }
+
+}
+@media screen and (min-width: 361px) and (max-width: 790px)
+{
+    div{
+        font-size:12px;
+        text-decoration: none;
+    }
+
+    .item{
+        font-size:12px !important;
+    }
+    .span-title{
+        font-size:21px;
+    }
+    .circular-grande {
+        width: 160px;
+        height: 160px;
+        background-size:cover;
+        background-position: center;
+        border-radius: 150px;
+        border: 3px solid #e7e0cf;
+        webkit-border-radius: 150px;
+        -moz-border-radius: 150px;
+        /* box-shadow: 0 0 8px rgba(0, 0, 0, 1);
+        -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 1);
+        -moz-box-shadow: 0 0 8px rgba(0, 0, 0, 1);*/
+    }
+}
+@media screen and (min-width: 790px) and (max-width: 1500px)
+{
+    div{
+        font-size:12px;
+        text-decoration: none;
+    }
+    .item{
+        font-size:12px !important;
+    }
+    .span-title{
+        font-size:35px;
+    }
+
+    .circular-grande {
+        width: 260px;
+        height: 260px;
+        background-size:cover;
+        background-position: center;
+        border-radius: 150px;
+        border: 3px solid #e7e0cf;
+        webkit-border-radius: 150px;
+        -moz-border-radius: 150px;
+        /* box-shadow: 0 0 8px rgba(0, 0, 0, 1);
+        -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 1);
+        -moz-box-shadow: 0 0 8px rgba(0, 0, 0, 1);*/
+    }
+}
+
+a{
+    text-decoration:none !important;
+}
+span i{
+    color:white !important;
+}
+h4{
+    margin: 0px;
+}
+
+h6{
+    margin: 0px;
+}
+.dropdown-content li > span {
+    color: #053951 !important;
+    font-size: 12px !important;
+ }
+p,i{
+    color: white!important;
+}
+.ejercicios{
+    font-size:18px;
+}
+.tap-a{
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+video {
+    width: 250px;
+    height: 250px;
+
+}
+.viewfinder{
+    height:290px !important;
+}
+.camera-popup .photo-preview {
+    width: 250px !important;
 }

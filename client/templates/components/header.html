@@ -12,7 +12,7 @@
 
         <div class="container">
             <a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only">
-                <i class="material-icons">menu</i>
+                <i class="fa fa-bars fa-x2"></i>
             </a>
 
         </div>
@@ -22,7 +22,7 @@
                 <div id="logo-container" class="brand-logo">
                     <div class="row">
                         <div class="col s12 profile-content">
-                            <img style="background-image: url('{{currentUser.profile.foto}}');" class=" circular avatar responsive-img">
+                            <center><div style="background-image: url('{{currentUser.profile.foto}}');" class=" circular2 avatar responsive-img"></div></center>
                             <h1>{{currentUser.profile.nombre}} {{currentUser.profile.apellido}}</h1>
                         </div>
                     </div>
@@ -43,7 +43,7 @@
             {{/if}}
             {{#if isInRole 'alumno'}}
                 <li class="bold">
-                    <a href="{{pathFor 'listaNotificaciones'}}" class="waves-effect waves-teal"><div class="circle cercle-notific lineBeig-small red"><p>{{numeroNotificaciones}}</p></div>Notificaciones<i style="color: white" class="fa fa-2x fa-comment" aria-hidden="true"></i>
+                    <a href="{{pathFor 'listaNotificaciones'}}" class="waves-effect waves-teal">{{#if isVisible}}<div class="circle cercle-notific lineBeig-small red"><p>{{numeroNotis}}</p></div>{{/if}}Notificaciones<i style="color: white" class="fa fa-2x fa-comment" aria-hidden="true"></i>
 
                 </a></li>
             {{/if}}

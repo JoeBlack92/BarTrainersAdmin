@@ -21,19 +21,25 @@ Meteor.publish('listaCursos', function () {
 Meteor.publishComposite('curso', function(cursoId) {
 
     return {
-        find: function() {
+        find: function () {
             // Find top ten highest scoring posts
             return Cursos.find({_id: cursoId});
         },
         children: [
             {
-                find: function() {
-                    return Meteor.users.find({'roles.0' : 'profesor'});
+                find: function () {
+                    return Meteor.users.find({'roles.0': 'profesor'});
                 }
             },
             {
-                find: function() {
-                    return Meteor.users.find({'roles.0' : 'alumno'});
+                find: function () {
+                    return Meteor.users.find({'roles.0': 'alumno'});
+                }
+            },
+
+            {
+                find: function (curso) {
+                    return Niveles.find({idCurso: curso._id});
                 }
             }
         ]

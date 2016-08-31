@@ -2,7 +2,7 @@
 
     <div class="row text-white">
     {{#if isInRole 'admin' }}
-        <div class="col no-padding s4 m4">
+        <div class="col no-padding s6 m3">
             <div id="alumnos" class="card beig">
                 <div class="card-content white-text">
                     <span class="card-title">Alumnos</span>
@@ -15,7 +15,7 @@
                 </div>
             </div>
         </div>
-        <div class="col no-padding s4 m4">
+        <div class="col no-padding s6 m3">
             <div id="profesores" class="card beig">
                 <div class="card-content white-text">
                     <span class="card-title">Profesores</span>
@@ -26,13 +26,24 @@
                 </div>
             </div>
         </div>
-        <div class="col no-padding s4 m4">
+        <div class="col no-padding s6 m3">
             <div id="reservas" class="card beig">
                 <div class="card-content white-text">
                     <span class="card-title">Reservas</span>
 
                     <div class="row">
                             <h3>{{numeroReservas}} <i class="fa fa-user" aria-hidden="true"></i></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col no-padding s6 m3">
+            <div id="empresas" class="card beig">
+                <div class="card-content white-text">
+                    <span class="card-title">Empresas</span>
+
+                    <div class="row">
+                        <h3>{{numeroEmpresas}} <i class="fa fa-user" aria-hidden="true"></i></h3>
                     </div>
                 </div>
             </div>

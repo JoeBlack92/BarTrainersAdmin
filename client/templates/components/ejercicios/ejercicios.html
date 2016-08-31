@@ -1,0 +1,29 @@
+<template name="ejercicios">
+<div class="row text-white">
+    <div class="row no-padding text-white beig" style="margin-bottom: 0px;height: 100px">
+        <h3 class="card-middle">Ejercicios</h3>
+    </div>
+    <div class="row no-padding" style="margin: 0px">
+        <ul class="list hidden no-padding">
+                {{#each listaejercicios}}
+
+                    <li class="item"><p class="ejercicios">&nbsp;&nbsp;<i class="fa fa-thumb-tack" aria-hidden="true"></i>   {{this}}<i id="borrar-ejerc" style="    margin: -3px 16px 0px -5px;" class=" secondary-content fa fa-2x fa-remove"></i></p></li>
+
+
+                {{/each}}
+            </ul>
+        </div>
+    <hr style="margin-top: 0px">
+    <div class="row">
+        <div class="input-field col s10 l11 text-white">
+            <input id="nombreEjercicio" type="text" class="text-white">
+            <label for="nombreEjercicio">Nuevo Ejercició</label>
+        </div>
+        <div class="col s2 l1">
+            <a id="nuevoEjer" href="#" class="btn-floating btn-large blue-grey darken-3" style="margin: 0px -15px">
+                <i class="fa fa-plus"></i>
+            </a>
+        </div>
+    </div>
+</div>
+</template>

@@ -15,32 +15,61 @@ Meteor.methods({
             horas: datosCurso.horas,
             desc: datosCurso.desc,
             alumnos:[],
-            profesores:[]
+            profesores:[],
+            ejercicios: []
 
         });
 
 
     },
 
-    anadirAlumno : function (cursoId, alumnoId) {
-
+    anadirAlumno : function (cursoId, alumnoId, datosId) {
 
 
                 Cursos.update({_id: cursoId}, {$push: {alumnos: alumnoId}});
 
                 Niveles.insert({
+                    idAlumno: alumnoId,
+                    idCurso: cursoId,
+                    ejercicios: datosId
+                })
 
-                    cursoId: cursoId,
-                    alumnoId: alumnoId,
-                    niveles: {
-                        nivel1: false,
-                        nivel2: false,
-                        nivel3: false
-                    }
-
-                });
+               
 
     },
+    eliminarAlumnoCurso: function (cursoId, alumnoId) {
+
+
+        Cursos.update({_id: cursoId }, { $pull: { alumnos: alumnoId } },{ multi: true });
+
+        Niveles.remove({idCurso: cursoId , idAlumno: alumnoId});
+
+    },
+
+    anadirEjecicio : function (cursoId, nameEje) {
+
+        var datos = {name: nameEje, finalizado: false};
+        
+
+        
+        Cursos.update({_id: cursoId}, {$push: {ejercicios: nameEje}});
+
+        Niveles.update({idCurso: cursoId},{$push: {ejercicios: datos}},{multi:true});
+        
+    },
+
+    eliminarEjercicio: function (cursoId, nameEje) {
+
+        console.log("Cursoid:  "+cursoId
+            +"   name: "+ nameEje);
+        
+        Cursos.update({_id: cursoId}, {$pull: {ejercicios: nameEje}});
+
+        Niveles.update({idCurso: cursoId},{$pull: {ejercicios: { name: nameEje}}},{multi:true});
+
+    },
+
+
 
     anadirProfesor : function (cursoId, profesorId) {
 

@@ -17,12 +17,17 @@
         </div>
             {{#if isInRole 'admin' or isInRole 'profesor'}}
 
+
                 <div id="test1" class="col s12 no-padding">
-                    {{#each reservas}}
 
-                        {{>reserva}}
+                    <ul class="list hidden no-padding">
+                        {{#each reservas}}
 
-                    {{/each}}
+                            {{>reserva}}
+
+                        {{/each}}
+                    </ul>
+
                 </div>
             {{/if}}
 
@@ -42,7 +47,7 @@
 
     <div class="fixed-action-btn ">
         <a href="{{pathFor 'nuevaReserva'}}" class="btn-floating btn-large blue-grey darken-3">
-            <i class="material-icons">add</i>
+            <i class="fa fa-plus"></i>
         </a>
     </div>
 

@@ -4,36 +4,9 @@
         <br>
         <form id="nueva-reserva" class="col s12 text-white">
             <div class="input-field col s12">
+                <p class="lab-top" >Fecha</p>
                 <input id="datepicker" type="date" class="datepicker">
-                <label for="datepicker">Fecha</label>
-            </div>
 
-            <div {{activarHoraInicio}} class="input-field col s12">
-                <div class="hora-inicio select-wrapper"><span class="caret">▼</span>
-                    <select id="hora-inicio" class="initialized">
-                        <option value="" disabled="" selected="">Hora de inicio</option>
-                        <option value="9">09:00</option>
-                        <option value="10">10:00</option>
-                        <option value="11">11:00</option>
-                        <option value="12">12:00</option>
-                        <option value="13">13:00</option>
-                        <option value="14">14:00</option>
-                        <option value="15">15:00</option>
-                    </select>
-                </div>
-                <label>Hora de inicio</label>
-            </div>
-            <div {{activarHoras}} class="input-field col s12">
-                <div class="numero-horas select-wrapper"><span class="caret">▼</span>
-                    <select id="numero-horas" class="initialized">
-                        <option value="" disabled="" selected="">¿Cuantas horas?</option>
-                        <option value="1">1 hora</option>
-                        <option value="2">2 horas</option>
-                        <option value="3">3 horas</option>
-                        <option value="4">4 horas</option>
-                    </select>
-                </div>
-                <label>Horas</label>
             </div>
             <div {{activarBarras}} class="input-field col s12">
                 <div class="barras select-wrapper"><span class="caret">▼</span>
@@ -50,6 +23,25 @@
                 </div>
                 <label>Barra a resevar</label>
             </div>
+            <div {{activarHoraInicio}} class="input-field col s12">
+                <div class="hora-inicio select-wrapper"><span class="caret">▼</span>
+                    <select id="hora-inicio" class="initialized">
+                        <option value="" disabled="" selected="">Hora de inicio</option>
+
+                    </select>
+                </div>
+                <label>Hora de inicio</label>
+            </div>
+            <div {{activarHoras}} class="input-field col s12">
+                <div class="numero-horas select-wrapper"><span class="caret">▼</span>
+                    <select id="numero-horas" class="initialized">
+                        <option value="" disabled="" selected="">¿Cuantas horas?</option>
+
+                    </select>
+                </div>
+                <label>Horas</label>
+            </div>
+
 
             <button class="blue-grey darken-3 btn waves-effect waves-light" type="submit" name="action">Reservar
                 <i class="material-icons right">send</i>

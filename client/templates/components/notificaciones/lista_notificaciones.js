@@ -1,9 +1,24 @@
 Template.listaNotificaciones.helpers({
- //add you helpers here
+ 
+    notificaciones: function () {
+        return Notificaciones.find();
+    }
+});
+
+Template.itemNotificacion.helpers({
+
+    empresa: function () {
+        return Meteor.users.findOne({_id: this.idEmpresa});
+    }
+    
 });
 
 Template.listaNotificaciones.events({
- //add your events here
+    'click #noti': function () {
+        
+        
+        
+    }
 });
 
 Template.listaNotificaciones.onCreated(function() {

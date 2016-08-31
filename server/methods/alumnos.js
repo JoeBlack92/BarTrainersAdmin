@@ -25,12 +25,27 @@ Meteor.methods({
 
     },
 
+    //Admin
+
+    editarFichaAlumno: function (datosAlumno) {
+
+        Meteor.users.update({_id: datosAlumno._id},{$set: {
+            'profile.foto': datosAlumno.foto,
+            username:  datosAlumno.username,
+            'profile.nombre': datosAlumno.nombre,
+            'profile.apellido': datosAlumno.apellido,
+            'emails.0.address': datosAlumno.email
+        }});
+
+    },
+
+
+    //Alumnno
     editarAlumno: function (datosAlumno) {
 
         Meteor.users.update({_id: Meteor.userId()},{$set: {
             'profile.btrabajo': datosAlumno.trabajo,
-            'profile.extras': datosAlumno.extras,
-            'profile.foto': datosAlumno.foto
+            'profile.extras': datosAlumno.extras
         }});
 
     },

@@ -13,10 +13,10 @@ Template.listaEmpresas.onCreated(function() {
 });
 
 Template.listaEmpresas.onRendered(function() {
-    //add your statement here
+   setTimeout(animateEnter(),1000);
 });
 
 Template.listaEmpresas.onDestroyed(function() {
-    //add your statement here
+    animateLeave()
 });
 

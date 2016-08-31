@@ -11,7 +11,8 @@ Template.nuevoCurso.events({
         var datosCurso = {
             nombre: $('#nombreCurso').val(),
             horas: $('#horas').val(),
-            desc: $('#descripcion').val()
+            desc: $('#descripcion').val(),
+            
         };
 
         if(!datosCurso.nombre){

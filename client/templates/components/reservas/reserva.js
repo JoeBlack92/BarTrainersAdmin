@@ -15,11 +15,18 @@ Template.reserva.helpers({
 
 Template.reserva.events({
     'click #removeReserva' : function (e,t) {
+        
+        var datos = {
+            
+            id: this._id,
+            fecha: this.fecha,
+            barra: this.barra
+        }
 
         var retVal = confirm("Esta seguro de eliminar la reserva?");
         if( retVal == true ){
 
-            Meteor.call('eliminarReserva', this._id , function (error, result) {
+            Meteor.call('eliminarReserva', datos , function (error, result) {
                 if(error){
                     return alert('No se ha podido eliminar la reserva');
                 }

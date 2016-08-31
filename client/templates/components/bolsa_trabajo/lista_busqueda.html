@@ -1,25 +1,33 @@
-<template name="listaBusqueda">
+<template name="listaBusqueda" xmlns="http://www.w3.org/1999/html">
 
     {{#each alumnos}}
-        <div class="card-panel beig " style="margin-top: 0px; margin-bottom: 0px;">
+        <div class="card-panel beig text-white" style="margin-top: 0px; margin-bottom: 0px;">
             <div class="row" style="height: 100px; ">
                 <div class="col s4 m2 l2 no-pad-top no-pad-bot" >
-                    <div style=" margin-top: 0px; background-image: url('{{profile.foto}}');" class="circular avatar center "></div></div>
-                <div class="col s7 m9 l9 no-pad-top no-pad-bot">
+                    <div style=" margin-top: 0px; background-image: url('{{profile.foto}}');" class="circular avatar center "></div>
+                </div>
+                <div class="col s6 m9 l9 no-pad-top no-pad-bot">
                     <p style="color: #fff;">
-                        <span style="font-size: 24px;">{{profile.nombre}} {{profile.apellido}}</span>
+                        <h6 style="font-size: 24px;">{{profile.nombre}} {{profile.apellido}}</h6>
                         <br/>
                     <div class="row">
                         Email: {{emails.[0].address}}
                     </div>
                     </p>
-                    <a href="{{pathFor 'nuevaNotificacion'}}">
-                        <i class="fa fa-comment-o"> Contactar</i>
+
+                </div>
+                <div class="col s2 m1 l1 ">
+                    <center></center>
+                    <div class="circle lineBeig-small {{colorExtras}}" style=" margin: 0px auto; height: 50px; width: 50px;"><h6 style=" margin: 17px 3px;">Extras</h6></div>
+                    <br>
+
+                    <a style="text-decoration: none; margin:0px auto; " href="{{pathFor 'nuevaNotificacion'}}">
+                            <i class=" text-white fa fa-2x fa-comment-o" style=""></i>
                     </a>
+
+
                 </div>
-                <div class="col s1 m1 l1">
-                    Extras <div class="circle lineBeig-small {{colorExtras}}" style=" margin: 0px auto; height: 20px; width: 20px;">&nbsp;</div>
-                </div>
+
             </div>
         </div>
     {{/each}}
