@@ -1,3 +1,21 @@
+Template.registerHelper('progresoAlumno', function (idAlumno) {
+
+    var niveles = Niveles.findOne({idAlumno: idAlumno});
+
+
+
+    var count = 0;
+    for(var i = 0; i < niveles.ejercicios.length; ++i){
+        if(niveles.ejercicios[i].finalizado == true)
+            count++;
+    }
+    
+    var result = (count * 100)/niveles.ejercicios.length;
+    console.log(result);
+    return Math.round(result);
+
+});
+
 Template.curso.helpers({
 
     idCurso: function () {
@@ -45,6 +63,7 @@ Template.curso.helpers({
         }
 
     }
+
 });
 Template.curso.onCreated(function() {
 
@@ -52,6 +71,8 @@ Template.curso.onCreated(function() {
     var instance = this;
 
     instance.idCurso = new ReactiveVar(this.data._id);
+
+
 
 });
 
@@ -153,6 +174,7 @@ Template.curso.onRendered(function() {
 
     $('ul.tabs').tabs();
     $('ul.tabs').tabs('select_tab', 'tab_id');
+
 });
 
 Template.curso.onDestroyed(function() {
