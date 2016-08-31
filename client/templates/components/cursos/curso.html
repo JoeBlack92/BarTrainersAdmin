@@ -2,17 +2,17 @@
     <div class="row">
         <div class="col s12 no-padding blue-grey darken-2">
             <ul class="tabs blue-grey darken-2">
-                <li class="tab col s6"><a id="cursTab" class="active tap-a  white-text" href="#cursoTab"><div>Curso</div></a></li>
+                <li class="tab col s6"><a id="cursTab" class="active tap-a  white-text" href="#cursoTab"><div class="title-tab">Curso</div></a></li>
 
                 {{#if isInRole 'admin'}}
 
-                    <li class="tab col s6"><a id="excTab" class=" tap-a white-text" href="#ejerciciotab"><div>Ejecicios</div></a></li>
+                    <li class="tab col s6"><a id="excTab" class=" tap-a white-text" href="#ejerciciotab"><div class="title-tab">Ejecicios</div></a></li>
 
                 {{/if}}
 
                 {{#if isInRole 'profesor'}}
 
-                    <li class="tab col s6"><a id="excTab" class=" tap-a white-text" href="#ejerciciotab"><div>Ejecicios</div></a></li>
+                    <li class="tab col s6"><a id="excTab" class=" tap-a white-text" href="#ejerciciotab"><div class="title-tab">Ejecicios</div></a></li>
 
                 {{/if}}
              </ul>
@@ -66,7 +66,9 @@
                                                 <span style="font-size: 12px;">&nbsp;&nbsp;{{profile.nombre}} {{profile.apellido}}</span>
 
                                             </p>
-
+                                            <div class="progress">
+                                                <div class="determinate" style="width: {{progresoAlumno _id}}%"></div>
+                                            </div>
 
                                         </div>
 
@@ -139,9 +141,14 @@
                                             <div style=" margin-top: 0px; background-image: url('{{profile.foto}}');" class="circular3 avatar center "></div>
                                         </div>
                                         <div class="col s7" style="text-decoration: none">
+
                                             <p>
                                                 <span style="font-size: 12px;">&nbsp;&nbsp;{{profile.nombre}} {{profile.apellido}}</span>
                                             </p>
+
+                                            <div class="progress">
+                                                <div class="determinate" style="width: {{progresoAlumno _id}}%"></div>
+                                            </div>
 
 
                                         </div>
