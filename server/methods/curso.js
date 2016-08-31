@@ -60,8 +60,8 @@ Meteor.methods({
 
     eliminarEjercicio: function (cursoId, nameEje) {
 
-        console.log("Cursoid:  "+cursoId
-            +"   name: "+ nameEje);
+        // console.log("Cursoid:  "+cursoId
+        //     +"   name: "+ nameEje);
         
         Cursos.update({_id: cursoId}, {$pull: {ejercicios: nameEje}});
 
@@ -69,7 +69,16 @@ Meteor.methods({
 
     },
 
+    evaluar : function (cursoId, alumnoId, nameEje, nuevoVal) {
 
+        // console.log("idCurso: "+ cursoId
+        // +"\nalumno: "+ alumnoId
+        // +"\nname: "+ nameEje
+        // +"\nval: "+ nuevoVal);
+
+        Niveles.update({idCurso: cursoId, idAlumno: alumnoId, 'ejercicios.name':nameEje},{$set: {'ejercicios.$.finalizado': nuevoVal}});
+
+    },
 
     anadirProfesor : function (cursoId, profesorId) {
 

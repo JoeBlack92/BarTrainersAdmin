@@ -1,5 +1,22 @@
 <template name="evaluar">
+    <div class="row text-white">
+        <div class="row no-padding text-white beig" style="margin-bottom: 0px;height: 100px">
+            <h3 class="card-middle">Ejercicios {{alumno}}</h3>
+        </div>
+        <div class="row no-padding" style="margin: 0px">
+            <form action="#" >
+                    <ul class="list hidden no-padding">
+                        {{#each listaeval}}
+                            <li class="item text-white">
+                                <p class="text-white" style="margin-left: 10px">
+                                    <input type="checkbox"  id="{{count}}" checked="{{checked finalizado}}"/>
+                                    <label class="text-white" for="{{count}}">{{name}}</label>
+                                </p>
+                            </li>
 
-
-
+                        {{/each}}
+                    </ul>
+            </form>
+        </div>
+    </div>
 </template>
