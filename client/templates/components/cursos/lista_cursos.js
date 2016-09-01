@@ -1,6 +1,10 @@
 Template.listaCursos.helpers({
     cursos: function () {
         return Cursos.find();
+    },
+    
+    cursosProfe: function () {
+        return Cursos.find({'profesores': Meteor.userId()});
     }
 });
 
