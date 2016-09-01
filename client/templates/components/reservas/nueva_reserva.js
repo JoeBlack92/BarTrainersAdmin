@@ -124,7 +124,7 @@ Template.nuevaReserva.events({
                         }
 
                     });
-
+                    $('select').material_select();
                 }else{
                     console.log(error);
                 }
@@ -140,9 +140,9 @@ Template.nuevaReserva.events({
                 }
 
             });
-            
+            $('select').material_select();
         }
-        $('select').material_select();
+        
     },
 
     'submit #nueva-reserva': function (e, t) {

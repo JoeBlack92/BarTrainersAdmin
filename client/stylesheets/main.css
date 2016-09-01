@@ -39,6 +39,10 @@ h6{
 /************ Nav ****************/
 /********************************/
 
+a.button-collapse.top-nav.full {
+    line-height: 80px !important;
+}
+
 
 #logo-container {
     height: auto;
@@ -719,6 +723,18 @@ video {
 /**********************************/
 /************ Helpers ************/
 /********************************/
+
+.x1{
+    font-size: 1.4em;
+}
+
+.x2{
+    font-size: 2em;
+}
+
+.x3{
+    font-size: 2.5em;
+}
 
 .absolute-center {
     position: absolute;
