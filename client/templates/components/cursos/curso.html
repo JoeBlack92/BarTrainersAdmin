@@ -2,17 +2,19 @@
     <div class="row">
         <div class="col s12 no-padding blue-grey darken-2">
             <ul class="tabs blue-grey darken-2">
-                <li class="tab col s6"><a id="cursTab" class="active tap-a  white-text" href="#cursoTab"><div class="title-tab">Curso</div></a></li>
+                <li class="tab col s4"><a id="cursTab" class="active tap  white-text" href="#cursoTab"><div class="title-tab">Curso</div></a></li>
 
                 {{#if isInRole 'admin'}}
+                    <li class="tab col s4"><a id="alTab" class=" tap white-text" href="#alumnostab"><div class="title-tab">Alumnos</div></a></li>
+                    <li class="tab col s4"><a id="excTab" class=" tap white-text" href="#ejerciciotab"><div class="title-tab">Ejercicios</div></a></li>
 
-                    <li class="tab col s6"><a id="excTab" class=" tap-a white-text" href="#ejerciciotab"><div class="title-tab">Ejercicios</div></a></li>
+
 
                 {{/if}}
 
                 {{#if isInRole 'profesor'}}
-
-                    <li class="tab col s6"><a id="excTab" class=" tap-a white-text" href="#ejerciciotab"><div class="title-tab">Ejercicios</div></a></li>
+                    <li class="tab col s4"><a id="alTab" class=" tap white-text" href="#alumnostab"><div class="title-tab">Alumnos</div></a></li>
+                    <li class="tab col s4"><a id="excTab" class=" tap white-text" href="#ejerciciotab"><div class="title-tab">Ejercicios</div></a></li>
 
                 {{/if}}
              </ul>
@@ -26,9 +28,9 @@
                     <p>Profesores:</p>
                     {{#each listprofes}}
                         <div class="row no-padding">
-                            <div class="col s2" >
+                            <div class="col s3" >
                                 <div style=" margin-top: 0px; background-image: url('{{profile.foto}}');" class="circular3 avatar center "></div></div>
-                            <div class="col s10">
+                            <div class="col s9">
                                 <p>
                                     <span style="font-size: 12px;">{{profile.nombre}} {{profile.apellido}}</span>
                                 </p>
@@ -44,20 +46,18 @@
                     <p>Descripción:</p>
                     <p style="text-align: justify;">{{desc}}</p>
                 </div>
+            </div>
+            </div>
 
+                <div id="alumnostab" class="col s12 no-padding">
 
+                    {{#if isInRole 'admin'}}
+                        <div class="row" >
 
+                            <div class="col s12" style="text-decoration: none; margin-top: 20px">
+                                {{#each listalumnos}}
 
-                {{#if isInRole 'admin'}}
-                    <div class="row" >
-                        <div class="col s12">
-                            <h5 class="text-center">Alumnos Inscritos</h5>
-                            <hr>
-                        </div>
-                        <div class="col s12" style="text-decoration: none; margin-top: 20px">
-                            {{#each listalumnos}}
-
-                                <div class="row">
+                                    <div class="row">
 
                                         <div class="col s2" >
                                             <div style=" margin-top: 0px; background-image: url('{{profile.foto}}');" class="circular3 avatar center "></div>
@@ -73,137 +73,138 @@
 
                                         </div>
 
-                                    <div class="col s3" style="text-decoration: none">
-                                        <div class="col s6">
-                                            <a href="{{pathFor 'evaluar' IdCurso=idCurso IdAlumno=_id}}">
-                                                <i  style="margin-top:10px;" class="fa fa-2x fa-pencil-square-o secondary-content"></i>
-                                            </a>
-                                        </div>
-                                        <div class="col s6">
-                                            <i  id="borrar-alumno" style="margin-top:10px;" class="fa fa-2x fa-remove secondary-content"></i>
-                                        </div>
-
-                                    </div>
-
-
-
-                                </div>
-
-                            {{/each}}
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col s12 m9">
-                            <label>&nbsp;</label>
-                            <select class="soflow" id="profes" style="margin: 0;">
-                                <option value="" disabled selected>Assignar Profesor</option>
-                                {{#each profesores}}
-                                    <option value="{{_id}}"> {{profile.nombre}} {{profile.apellido}}</option>
-                                {{/each}}
-                            </select>
-
-                        </div>
-                        <div class="input-field col s12 m3">
-
-                            <a id="assignar-profesor" href="#" class="full-width-button waves-effect waves-green btn btn-block ">Assignar</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col s12 m9">
-                            <label>&nbsp;</label>
-                            <select class="soflow" id="alum" style="margin: 0;">
-                                <option value="" disabled selected>Assignar Alumnos</option>
-                                {{#each alumnos}}
-                                    <option value="{{_id}}"> {{profile.nombre}} {{profile.apellido}}</option>
-                                {{/each}}
-                            </select>
-
-                        </div>
-                        <div class="input-field col s12 m3">
-
-                            <a id="assignar-alumno" href="#" class="full-width-button waves-effect waves-green btn btn-block ">Assignar</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col s12">
-                            <a id="eliminar-curso" href="#" class="eliminar-button full-width-button waves-effect waves-red btn btn-block ">Eliminar</a>
-                        </div>
-                    </div>
-
-                {{/if}}
-                {{#if isInRole 'profesor'}}
-                    <div class="row" >
-                        <div class="col s12" style="border-bottom: 2px bold beige">
-                            <h4>Alumnos Inscritos</h4>
-                        </div>
-                        <div class="col s12" style="margin-top: 20px">
-                            {{#each listalumnos}}
-                                <div class="row">
-
-                                        <div class="col s2" >
-                                            <div style=" margin-top: 0px; background-image: url('{{profile.foto}}');" class="circular3 avatar center "></div>
-                                        </div>
-                                        <div class="col s7" style="text-decoration: none">
-
-                                            <p>
-                                                <span style="font-size: 12px;">&nbsp;&nbsp;{{profile.nombre}} {{profile.apellido}}</span>
-                                            </p>
-
-                                            <div class="progress">
-                                                <div class="determinate" style="width: {{progresoAlumno _id}}%"></div>
-                                            </div>
-
-
-                                        </div>
-
-                                    <div class="col s3" style="text-decoration: none">
-                                        <div class="col s6">
-                                            {{#if esProfe}}
+                                        <div class="col s3" style="text-decoration: none">
+                                            <div class="col s6">
                                                 <a href="{{pathFor 'evaluar' IdCurso=idCurso IdAlumno=_id}}">
                                                     <i  style="margin-top:10px;" class="fa fa-2x fa-pencil-square-o secondary-content"></i>
                                                 </a>
-                                            {{/if}}
+                                            </div>
+                                            <div class="col s6">
+                                                <i  id="borrar-alumno" style="margin-top:10px;" class="fa fa-2x fa-remove secondary-content"></i>
+                                            </div>
+
                                         </div>
-                                        <div class="col s6">
-                                            <i  id="borrar-alumno" style="margin-top:10px;" class="fa fa-2x fa-remove secondary-content"></i>
-                                        </div>
+
 
 
                                     </div>
 
-
-
-                                </div>
-
-                            {{/each}}
+                                {{/each}}
+                            </div>
                         </div>
-                    </div><div class="row">
-                    <div class="col s7 m9">
-                        <label>&nbsp;</label>
-                        <select class="soflow" id="alum">
-                            <option value="" disabled selected>Assignar Alumnos</option>
+                        <div class="row">
+                            <div class="col s12 m9">
+                                <label>&nbsp;</label>
+                                <select class="soflow" id="profes" style="margin: 0;">
+                                    <option value="" disabled selected>Assignar Profesor</option>
+                                    {{#each profesores}}
+                                        <option value="{{_id}}"> {{profile.nombre}} {{profile.apellido}}</option>
+                                    {{/each}}
+                                </select>
 
-                            {{#each alumnos}}
+                            </div>
+                            <div class="input-field col s12 m3">
 
-                                <option id="{{_id}}" value="{{_id}}"> {{profile.nombre}} {{profile.apellido}}</option>
-                            {{/each}}
-                        </select>
+                                <a id="assignar-profesor" href="#" class="full-width-button waves-effect waves-green btn btn-block ">Assignar</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 m9">
+                                <label>&nbsp;</label>
+                                <select class="soflow" id="alum" style="margin: 0;">
+                                    <option value="" disabled selected>Assignar Alumnos</option>
+                                    {{#each alumnos}}
+                                        <option value="{{_id}}"> {{profile.nombre}} {{profile.apellido}}</option>
+                                    {{/each}}
+                                </select>
 
+                            </div>
+                            <div class="input-field col s12 m3">
+
+                                <a id="assignar-alumno" href="#" class="full-width-button waves-effect waves-green btn btn-block ">Assignar</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12">
+                                <a id="eliminar-curso" href="#" class="eliminar-button full-width-button waves-effect waves-red btn btn-block ">Eliminar</a>
+                            </div>
+                        </div>
+
+                    {{/if}}
+                    {{#if isInRole 'profesor'}}
+                        <div class="row" >
+
+                            <div class="col s12" style="margin-top: 20px">
+                                {{#each listalumnos}}
+                                    <div class="row">
+
+                                        <div class="col s2" >
+                                            <div style=" margin-top: 0px; background-image: url('{{profile.foto}}');" class="circular3 avatar center "></div>
+                                        </div>
+                                        <div class="col s7" style="text-decoration: none">
+
+                                            <p>
+                                                <span style="font-size: 12px;">&nbsp;&nbsp;{{profile.nombre}} {{profile.apellido}}</span>
+                                            </p>
+
+                                            <div class="progress">
+                                                <div class="determinate" style="width: {{progresoAlumno _id}}%"></div>
+                                            </div>
+
+
+                                        </div>
+
+                                        <div class="col s3" style="text-decoration: none">
+                                            <div class="col s6">
+                                                {{#if esProfe}}
+                                                    <a href="{{pathFor 'evaluar' IdCurso=idCurso IdAlumno=_id}}">
+                                                        <i  style="margin-top:10px;" class="fa fa-2x fa-pencil-square-o secondary-content"></i>
+                                                    </a>
+                                                {{/if}}
+                                            </div>
+                                            <div class="col s6">
+                                                <i  id="borrar-alumno" style="margin-top:10px;" class="fa fa-2x fa-remove secondary-content"></i>
+                                            </div>
+
+
+                                        </div>
+
+
+
+                                    </div>
+
+                                {{/each}}
+                            </div>
+                        </div><div class="row">
+                        <div class="col s7 m9">
+                            <label>&nbsp;</label>
+                            <select class="soflow" id="alum">
+                                <option value="" disabled selected>Assignar Alumnos</option>
+
+                                {{#each alumnos}}
+
+                                    <option id="{{_id}}" value="{{_id}}"> {{profile.nombre}} {{profile.apellido}}</option>
+                                {{/each}}
+                            </select>
+
+                        </div>
+                        <div class="input-field col s5 m3">
+
+                            <a id="assignar-alumno" style="margin: 10px" href="#" class=" modal-action modal-close waves-effect waves-green btn btn-block ">Assignar</a>
+                        </div>
                     </div>
-                    <div class="input-field col s5 m3">
 
-                        <a id="assignar-alumno" style="margin: 10px" href="#" class=" modal-action modal-close waves-effect waves-green btn btn-block ">Assignar</a>
-                    </div>
+                    {{/if}}
+
+
+
+
+
+
+
                 </div>
 
-                {{/if}}
 
-
-
-
-            </div>
-
-        </div>
     {{#if isInRole 'profesor'}}
         <div id="ejerciciotab" class="col s12 no-padding">
             {{>ejercicios}}

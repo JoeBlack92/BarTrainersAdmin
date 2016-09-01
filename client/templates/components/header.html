@@ -41,12 +41,12 @@
             {{#if isInRole 'admin'}}
                 <li class="bold"><a href="{{pathFor 'listaProfesores'}}" class="waves-effect waves-teal">Profesores<i style="color: white" class="fa fa-2x fa-graduation-cap" aria-hidden="true"></i></a></li>
             {{/if}}
-            {{#if isInRole 'alumno'}}
-                <li class="bold">
-                    <a href="{{pathFor 'listaNotificaciones'}}" class="waves-effect waves-teal">{{#if isVisible}}<div class="circle cercle-notific lineBeig-small red"><p>{{numeroNotis}}</p></div>{{/if}}Notificaciones<i style="color: white" class="fa fa-2x fa-comment" aria-hidden="true"></i>
+            <!--{{#if isInRole 'alumno'}}-->
+                <!--<li class="bold">-->
+                    <!--<a href="{{pathFor 'listaNotificaciones'}}" class="waves-effect waves-teal">{{#if isVisible}}<div class="circle cercle-notific lineBeig-small red"><p>{{numeroNotis}}</p></div>{{/if}}Notificaciones<i style="color: white" class="fa fa-2x fa-comment" aria-hidden="true"></i>-->
 
-                </a></li>
-            {{/if}}
+                <!--</a></li>-->
+            <!--{{/if}}-->
             {{#if isInRole 'alumno'}}
                 <li class="bold"><a href="{{pathFor 'listaReservas'}}" class="waves-effect waves-teal">Reservas<i style="color: white" class="fa fa-2x fa-glass" aria-hidden="true"></i></a></li>
             {{/if}}
@@ -56,15 +56,15 @@
             {{#if isInRole 'admin'}}
                 <li class="bold"><a href="{{pathFor 'listaReservas'}}" class="waves-effect waves-teal">Reservas<i style="color: white" class="fa fa-2x fa-glass" aria-hidden="true"></i></a></li>
             {{/if}}
-            {{#if isInRole 'admin'}}
-                <li class="bold"><a href="{{pathFor 'listaEmpresas'}}" class="waves-effect waves-teal">Empresas<i style="color: white" class="fa fa-2x fa-building" aria-hidden="true"></i></a></li>
-            {{/if}}
-            {{#if isInRole 'admin'}}
-                <li class="bold"><a href="{{pathFor 'listaBusqueda'}}" class="waves-effect waves-teal">Bolsa de Empleo<i style="color: white" class="fa fa-2x fa-briefcase" aria-hidden="true"></i></a></li>
-            {{/if}}
-            {{#if isInRole 'empresa'}}
-                <li class="bold"><a href="{{pathFor 'listaBusqueda'}}" class="waves-effect waves-teal">Bolsa de Empleo<i style="color: white" class="fa fa-2x fa-briefcase" aria-hidden="true"></i></a></li>
-            {{/if}}
+            <!--{{#if isInRole 'admin'}}-->
+                <!--<li class="bold"><a href="{{pathFor 'listaEmpresas'}}" class="waves-effect waves-teal">Empresas<i style="color: white" class="fa fa-2x fa-building" aria-hidden="true"></i></a></li>-->
+            <!--{{/if}}-->
+            <!--{{#if isInRole 'admin'}}-->
+                <!--<li class="bold"><a href="{{pathFor 'listaBusqueda'}}" class="waves-effect waves-teal">Bolsa de Empleo<i style="color: white" class="fa fa-2x fa-briefcase" aria-hidden="true"></i></a></li>-->
+            <!--{{/if}}-->
+            <!--{{#if isInRole 'empresa'}}-->
+                <!--<li class="bold"><a href="{{pathFor 'listaBusqueda'}}" class="waves-effect waves-teal">Bolsa de Empleo<i style="color: white" class="fa fa-2x fa-briefcase" aria-hidden="true"></i></a></li>-->
+            <!--{{/if}}-->
             <li class="bold"><a href="{{pathFor 'listaCursos'}}" class="waves-effect waves-teal">Cursos<i style="color: white" class="fa fa-2x fa-book" aria-hidden="true"></i>
         </a></li>
             {{#if isInRole 'alumno'}}
