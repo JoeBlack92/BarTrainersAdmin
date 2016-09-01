@@ -22,7 +22,7 @@ Template.mainLayout.onRendered(function () {
                 closeOnClick: true,
                 'edge': 'left'
             });
-        }else {
+        }else{
             $('.button-collapse').sideNav({
                 'edge': 'left'
             });
