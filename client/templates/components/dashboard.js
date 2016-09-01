@@ -9,15 +9,7 @@ Template.dashboard.onRendered(function() {
 
 
 Template.dashboard.events({
-
-    'click #notif': function () {
-
-        cordova.plugins.notification.local.schedule({
-            title: "Hola",
-            message: "Funciona!"
-        });
-    },
-
+    
     'click #alumnos': function () {
 
         Router.go('listaAlumnos');
