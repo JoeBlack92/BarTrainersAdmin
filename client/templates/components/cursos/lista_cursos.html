@@ -1,5 +1,6 @@
 <template name="listaCursos">
     <ul class="list hidden no-padding">
+    {{#if isInRole 'admin'}}
         {{#each cursos}}
             <li class="item" style="height: 200px; ">
                 <a href="{{pathFor 'curso'}}" >
@@ -18,6 +19,27 @@
                 </a>
             </li>
         {{/each}}
+    {{/if}}
+        {{#if isInRole 'profesor'}}
+            {{#each cursosProfe}}
+                <li class="item" style="height: 200px; ">
+                    <a href="{{pathFor 'curso'}}" >
+                        <div class="card-panel beig " style="margin-top: 0px; margin-bottom: 0px; padding: 0px;">
+                            <div class="row" style=" margin-bottom: 0px;height: 200px">
+                                <div class="col s12 card-middle" >
+
+
+                                    <i style="color: white" class="fa span-title fa-glass" aria-hidden="true"></i><span class="span-title text-white">&nbsp;&nbsp;{{nombre}}</span>
+                                    <i style="color: white" class="fa span-title fa-angle-right secondary-content" aria-hidden="true"></i>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            {{/each}}
+        {{/if}}
     </ul>
 
     <div class="fixed-action-btn ">

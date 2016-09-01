@@ -1,23 +1,23 @@
 <template name="ejercicios">
 <div class="row text-white">
-    <div class="row">
-        <div class="input-field col s12 m11 text-white">
-            <input id="nombreEjercicio" type="text" class="text-white">
-            <label for="nombreEjercicio">Nuevo Ejercició</label>
-        </div>
-        <div class="col s12 m1">
-            <a id="nuevoEjer" class="full-width-button waves-effect waves-light btn blue-grey darken-3"><i class="fa fa-plus"></i> Añadir</a>
-        </div>
-    </div>
     <div class="row no-padding" style="margin: 0px">
         <ul class="list hidden no-padding">
             {{#each listaejercicios}}
 
-                <li class="item"><p class="ejercicios">&nbsp;&nbsp;<i class="fa fa-thumb-tack" aria-hidden="true"></i>   {{this}}<i id="borrar-ejerc" style="    margin: -3px 16px 0px -5px;" class=" secondary-content fa fa-2x fa-remove"></i></p></li>
+                <li class="item item-ejercicio"><p class="ejercicios">&nbsp;&nbsp;<i class="fa fa-thumb-tack" aria-hidden="true"></i>   {{this}}<i id="borrar-ejerc" style="    margin: -3px 16px 0px -5px;" class=" secondary-content fa fa-2x fa-remove"></i></p></li>
 
 
             {{/each}}
         </ul>
     </div>
+    <div class="row">
+    <div class="input-field col s12 m11 text-white">
+        <input id="nombreEjercicio" type="text" class="text-white">
+        <label for="nombreEjercicio">Nuevo Ejercició</label>
+    </div>
+    <div class="col s12 m1" style="    margin-top: 24px;">
+        <a id="nuevoEjer" class="full-width-button waves-effect waves-light btn blue-grey darken-3"><i class="fa fa-plus"></i> Añadir</a>
+    </div>
+</div>
 </div>
 </template>

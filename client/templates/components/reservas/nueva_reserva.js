@@ -27,6 +27,7 @@ Template.nuevaReserva.events({
     'change #hora-inicio': function (e, t) {
 
         $('#numero-horas').find('option:not(:first)').remove();
+
         $('select').material_select();
 
         if (t.fechaReserva.get()) {
@@ -69,13 +70,12 @@ Template.nuevaReserva.events({
             //             cotr = false
             //         }
             //     }
-            // });
-            $('select').material_select();
+            // })
 
         } else {
             alert('Seleccciona una fecha!');
         }
-
+        $('select').material_select();
     },
 
     'change #numero-horas': function (e, t) {
@@ -140,9 +140,9 @@ Template.nuevaReserva.events({
                 }
 
             });
-            $('select').material_select();
+            
         }
-
+        $('select').material_select();
     },
 
     'submit #nueva-reserva': function (e, t) {
