@@ -55,8 +55,8 @@ Template.perfil.events({
 
         var cameraOptions = {
             width: 800,
-            height: 600,
-            sourceType: Camera.PictureSourceType.PHOTOLIBRARY
+            height: 600
+            //sourceType: Camera.PictureSourceType.PHOTOLIBRARY
         };
 
 

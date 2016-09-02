@@ -936,7 +936,7 @@ video {
         -moz-border-radius: 150px;
     }
 }
-@media screen and (min-width: 790px) and (max-width: 1500px)
+@media screen and (min-width: 790px) and (max-width: 2600px)
 {
     div{
         font-size:12px;
