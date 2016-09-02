@@ -52,7 +52,15 @@ Template.perfil.events({
     },
     
     'click #tomar-foto': function (e,template) {
-        MeteorCamera.getPicture({width: 200, height:250, quality:80}, function (error, data) {
+
+        var cameraOptions = {
+            width: 800,
+            height: 600,
+            sourceType: Camera.PictureSourceType.PHOTOLIBRARY
+        };
+
+
+        MeteorCamera.getPicture(cameraOptions, function (error, data) {
             if(!error){
                 template.foto.set(data);
             }
