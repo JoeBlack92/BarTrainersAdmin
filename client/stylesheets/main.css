@@ -28,10 +28,12 @@ span i{
     color:white !important;
 }
 h4{
+    padding: 0px;
     margin: 0px;
 }
 
 h6{
+    padding: 0px;
     margin: 0px;
 }
 
@@ -166,7 +168,7 @@ a.button-collapse.top-nav.full {
     width:64px
 }
 .side-nav .userView .name, .side-nav .userView .email {
-    font-weight:14px;
+    font-weight:400;
     line-height:24px
 }
 .side-nav .userView .name {
@@ -422,14 +424,14 @@ section.profile::after {
 .profile-content h1 {
     margin: 25px 0 0;
     font-size: 1.4em;
-    font-weight: 200;
+    font-weight: 400;
     letter-spacing: 0.05em;
 }
 .profile-content p {
     margin: 5px 0 0;
     color: #b49e6b;
     font-size: 0.8125em;
-    font-weight: 200;
+    font-weight: 400;
 }
 
 .avatar{
@@ -446,7 +448,8 @@ section.profile::after {
     color:white;
 }
 body{
-    background-color: #414B4F;
+    background-image: url("/img/fondo.png");
+    background-size:cover;
 }
 .text-white{
     color:white;
@@ -484,7 +487,7 @@ textarea:focus {
 }
 
 h3{
-    padding: 5px;
+    padding: 0px;
     margin: 0px;;
 }
 
@@ -897,6 +900,10 @@ video {
         font-size:10px !important;
     }
 
+    nav .container{
+        width: 100%;
+    }
+
     .span-title{
         font-size: 19px;
     }
@@ -922,6 +929,9 @@ video {
     .item{
         font-size:12px !important;
     }
+    nav .container{
+        width: 100%;
+    }
     .span-title{
         font-size:21px;
     }
@@ -941,6 +951,9 @@ video {
     div{
         font-size:12px;
         text-decoration: none;
+    }
+    nav .container{
+        width: 80%;
     }
     .item{
         font-size:12px !important;
@@ -994,4 +1007,27 @@ video {
 .item-ejercicio{
 
     height: 70px;
+}
+.side-nav.fixed a {
+
+    padding: 0 16px !important;
+
+}
+.side-nav li {
+    width: 80%;
+    margin: 10px auto;
+}
+/*#nav-mobile{*/
+    /*background-color: #CBB37A !important;*/
+/*}*/
+nav .container{
+
+    max-width: 1920px;
+    margin: 0px;
+
+}
+nav .container .nav-wrapper a img{
+    margin-top: 10px;
+    display: block;
+    margin: 10px auto;
 }

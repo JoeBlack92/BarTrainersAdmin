@@ -28,3 +28,6 @@ momentjs:moment
 mystor:device-detection
 reywood:publish-composite
 force-ssl
+djedi:sanitize-html
+djedi:sanitize-html-client
+

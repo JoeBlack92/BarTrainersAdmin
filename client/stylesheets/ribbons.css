@@ -1,0 +1,26 @@
+
+
+
+.back {
+    background:
+            url("/img/ribbon.png") 14px 0 repeat
+;
+    color: white;
+    height: 45px;
+    position:relative;
+    overflow:visible;
+}
+.back:before {
+    content:url(/img/left-ribbon.png);
+    top:-85px;
+    transform: scale(0.226);
+    left:-124px;
+    position:absolute;
+}
+.back:after {
+    content:url(/img/right-ribbon.png);
+    transform: scale(0.226);
+    position:absolute;
+    right:-124px;
+    top:-85px;
+}
