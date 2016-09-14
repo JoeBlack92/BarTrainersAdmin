@@ -125,6 +125,22 @@ Template.curso.events({
             });
         }
     },
+    'click #borrar-professor' : function (e,t) {
+
+
+        var retVal = confirm("Esta seguro de eliminar el profesor?");
+        if( retVal == true ){
+
+            console.log(Template.instance().idCurso.get() +"   "+ this._id);
+
+            Meteor.call('eliminarProfesorCurso',Template.instance().idCurso.get(), this._id, function (error, result) {
+
+                if(error){
+                    return alert(error.reason);
+                }
+            });
+        }
+    },
 
     'click #assignar-profesor' : function () {
 

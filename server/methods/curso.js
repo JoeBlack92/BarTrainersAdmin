@@ -45,6 +45,12 @@ Meteor.methods({
         Niveles.remove({idCurso: cursoId , idAlumno: alumnoId});
 
     },
+    eliminarProfesorCurso: function (cursoId, profeId) {
+
+
+        Cursos.update({_id: cursoId }, { $pull: { profesores: profeId } },{ multi: true });
+
+    },
 
     anadirEjecicio : function (cursoId, nameEje) {
 
