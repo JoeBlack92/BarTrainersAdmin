@@ -1,5 +1,5 @@
 <template name="listaAlumnos">
-
+    <!--<input id="buscar" class="input-field" placeholder="  Buscar..." type="text">-->
     <ul class="list hidden no-padding">
         {{#each alumnos}}
             <li class="item">
@@ -27,11 +27,11 @@
         {{/each}}
     </ul>
 
-
-    <div class="fixed-action-btn ">
-        <a href="{{pathFor 'nuevoAlumno'}}" class="btn-floating btn-large blue-grey darken-3">
-            <i class="fa fa-plus"></i>
-        </a>
-    </div>
-
+    {{#if isInRole 'admin'}}
+        <div class="fixed-action-btn ">
+            <a href="{{pathFor 'nuevoAlumno'}}" class="btn-floating btn-large blue-grey darken-3">
+                <i class="fa fa-plus"></i>
+            </a>
+        </div>
+    {{/if}}
 </template>

@@ -49,37 +49,50 @@
             </div>
         </div>
     {{/if}}
-    {{#if isInRole 'alumno' or isInRole 'profesor'}}
-        <div class="col s12 " style="padding-top: 10px;">
-                <div class="row" style="height: 150px">
-                        <center><div style="background-image: url('{{currentUser.profile.foto}}');" class="circular avatar responsive-img"></div>
-                            <h4>{{currentUser.profile.nombre}} {{currentUser.profile.apellido}}</h4>
-                        </center>
-                </div>
-                <div class="row">
+        {{#if isInRole 'alumno' or isInRole 'profesor'}}
 
-                    <div class="col s12 center">
-                        <div class="col s6 " style="display: inline-block; color: white;" >Buscando Trabajo</div>
-                        <div class="col s6 " style="display: inline-block;">
-                            <div class="circle lineBeig-small {{colorTrabajo}}" style=" margin: 0px auto; height: 20px; width: 20px;">&nbsp;</div>
+
+
+            <div class="col s12 no-padding" style="padding-top: 10px;">
+                <div class="row board-profile " style="height: 200px">
+                    <center><div style="background-image: url('{{currentUser.profile.foto}}');" class="circular board avatar responsive-img"></div>
+                        <h4>{{currentUser.profile.nombre}} {{currentUser.profile.apellido}}</h4>
+                    </center>
+                </div>
+                <div class="row  profile-content1">
+                    <ul>
+                        <li>
+                            <div class="digits">{{numeroReservas}}</div>
+                            Reservas
+                        </li>
+                    </ul>
+                    <div class="clear"></div>
+                </div>
+                {{#if isInRole 'profesor'}}
+                    <div class="row">
+
+                        <div class="col s12 center">
+                            <div class="col s6 " style="display: inline-block; color: white;" >Buscando Trabajo</div>
+                            <div class="col s6 " style="display: inline-block;">
+                                <div class="circle lineBeig-small {{colorTrabajo}}" style=" margin: 0px auto; height: 20px; width: 20px;">&nbsp;</div>
+                            </div>
                         </div>
+
                     </div>
+                    <div class="row">
 
-                </div>
-                <div class="row">
-
-                    <div class="col s12 center">
-                        <div class="col s6" style="color: white;" >Horas Extras</div>
-                        <div class="col s6">
-                            <div class="circle lineBeig-small {{colorExtra}}" style=" margin: 0px auto; height: 20px; width: 20px;">&nbsp;</div>
+                        <div class="col s12 center">
+                            <div class="col s6" style="color: white;" >Horas Extras</div>
+                            <div class="col s6">
+                                <div class="circle lineBeig-small {{colorExtra}}" style=" margin: 0px auto; height: 20px; width: 20px;">&nbsp;</div>
+                            </div>
                         </div>
+
                     </div>
+                {{/if}}
 
-                </div>
-
-
-        </div>
-    {{/if}}
+            </div>
+        {{/if}}
     </div>
 
 </template>

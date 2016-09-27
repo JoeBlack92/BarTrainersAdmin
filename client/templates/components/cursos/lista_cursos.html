@@ -41,10 +41,11 @@
             {{/each}}
         {{/if}}
     </ul>
-
+    {{#if isInRole 'admin'}}
     <div class="fixed-action-btn ">
         <a href="{{pathFor 'nuevoCurso'}}" class="btn-floating btn-large blue-grey darken-3">
             <i class="fa fa-plus"></i>
         </a>
     </div>
+    {{/if}}
 </template>

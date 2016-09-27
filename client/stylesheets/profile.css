@@ -1,0 +1,57 @@
+.profile-content1 {
+    background: #DBB789; /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    clear:both;
+    float:left;
+    overflow:hidden;
+    width:100%;
+    border: 1px solid #DBB789;
+    border-top: none;
+    -webkit-border-bottom-right-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.datos{
+    font-size: 18px;
+    color:white;
+}
+
+    .board-profile {
+        background: url("img/leaf-1482948_960_720.jpg") no-repeat;
+        background-position: bottom;
+        background-size: cover;
+        margin-bottom: 0px;
+        padding-top: 20px;
+        height: 180px !important;
+    }
+
+.profile-content1 ul{
+    float:left;
+    left:50%;
+    list-style-type:none;
+    margin:0 auto;
+    padding:0;
+    position:relative;
+}
+.profile-content1 ul li {
+    float:left;
+    position:relative;
+    right:50%;
+    padding: 5px 10px;
+    text-align: center;
+    border-right: 1px solid #eeeeee;
+    border-left: 1px solid #DBB789;
+}
+.profile-content1 ul li:first-child {
+    border-left: none;
+}
+.profile-content1 ul li:last-child {
+    border-right: none;
+}
+.profile-content1 ul li .digits {
+    font-weight: bold;
+    font-size: 0.8rem;
+}

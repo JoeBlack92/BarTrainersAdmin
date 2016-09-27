@@ -14,6 +14,7 @@ Meteor.methods({
             profile: {
                 nombre: datosAlumno.nombre,
                 apellido: datosAlumno.apellido,
+                telefono: datosAlumno.telefono,
                 foto: datosAlumno.foto,
                 btrabajo: false,
                 extras: false, 
@@ -34,7 +35,8 @@ Meteor.methods({
             username:  datosAlumno.username,
             'profile.nombre': datosAlumno.nombre,
             'profile.apellido': datosAlumno.apellido,
-            'emails.0.address': datosAlumno.email
+            'emails.0.address': datosAlumno.email,
+            'profile.telefono': datosAlumno.telefono
         }});
 
     },

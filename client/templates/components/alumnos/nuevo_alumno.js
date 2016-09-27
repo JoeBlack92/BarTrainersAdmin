@@ -37,7 +37,8 @@ Template.nuevoAlumno.events({
             username: $('#username').val(),
             password: $('#password').val(),
             email: $('#email').val(),
-            foto: Template.instance().foto.get()
+            foto: Template.instance().foto.get(),
+            telefono: $('#tel').val(),
         };
 
         if(!datosAlumno.nombre){
@@ -48,6 +49,8 @@ Template.nuevoAlumno.events({
             return alert('Ingresa un nombre de usuario');
         }else if(!datosAlumno.email){
             return alert('Ingresa un email');
+        }else if(!datosAlumno.telefono){
+            return alert('Ingresa un telefono');
         }
 
         Meteor.call('crearAlumno', datosAlumno, function (error, result) {
