@@ -41,7 +41,7 @@ Template.listaAlumnos.helpers({
 
         if(!Template.instance().buscar.get()){
 
-            return Meteor.users.find({'roles.0': 'alumno'},{sort: {createdAt: -1}});
+            return Meteor.users.find({'roles.0': 'alumno'},{sort: {'profile.nombre': -1}});
 
         }else{
 
@@ -49,7 +49,7 @@ Template.listaAlumnos.helpers({
 
 
 
-           return Meteor.users.find({'roles.0': 'alumno', 'profile.nombre': bus},{sort: {createdAt: -1}});
+           return Meteor.users.find({'roles.0': 'alumno', 'profile.nombre': bus},{sort: {'profile.nombre': -1}});
 
 
         }
