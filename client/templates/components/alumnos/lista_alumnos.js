@@ -38,7 +38,6 @@ Template.listaAlumnos.helpers({
 
     alumnos: function () {
 
-
         if(!Template.instance().buscar.get()){
 
             return Meteor.users.find({'roles.0': 'alumno'},{sort: {'profile.nombre': 1}});
@@ -53,8 +52,6 @@ Template.listaAlumnos.helpers({
 
 
         }
-
-
     }
 
 });
