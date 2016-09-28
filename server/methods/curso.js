@@ -22,6 +22,20 @@ Meteor.methods({
 
 
     },
+    editarCurso: function (cursoId, datosCurso) {
+
+        console.log(datosCurso + "\nid:"+ cursoId );
+
+        Cursos.update({_id: cursoId}, {$set: {
+
+            nombre: datosCurso.nombre,
+            horas: datosCurso.horas,
+            desc: datosCurso.desc
+
+        }});
+
+
+    },
 
     anadirAlumno : function (cursoId, alumnoId, datosId) {
 

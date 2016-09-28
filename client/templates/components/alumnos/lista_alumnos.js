@@ -38,17 +38,21 @@ Template.listaAlumnos.helpers({
 
     alumnos: function () {
 
-        return Meteor.users.find({'roles.0': 'alumno'},{sort: {createdAt: -1}});
-        // if(!Template.instance().buscar.get()){
-        //
-        //
-        // }else{
-        //
-        //     var bus = new RegExp(Template.instance().buscar.get());
-        //
-        //
-        //     console.log( Meteor.users.findOne({'roles.0': 'alumno', 'profile.nombre': {'$regex' : '/^bus', '$options' :'i'}},{sort: {createdAt: -1}}));
-        // }
+
+        if(!Template.instance().buscar.get()){
+
+            return Meteor.users.find({'roles.0': 'alumno'},{sort: {createdAt: -1}});
+
+        }else{
+
+            var bus = new RegExp("^"+Template.instance().buscar.get());
+
+
+
+           return Meteor.users.find({'roles.0': 'alumno', 'profile.nombre': bus},{sort: {createdAt: -1}});
+
+
+        }
 
 
     }

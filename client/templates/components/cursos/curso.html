@@ -51,6 +51,7 @@
                     <p>Horas: {{horas}}</p>
                     <p>Descripción:</p>
                     <p style="text-align: justify;">{{desc}}</p>
+                    <a href="{{pathFor 'editarCurso'}}" class="fa fa-edit fa-2x"></a>
                 </div>
                 {{#if isInRole 'admin'}}
                     <div class="row">
